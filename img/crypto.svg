@@ -1,0 +1,187 @@
+<!-- crypto-math-flying.svg — cryptography math only, animated -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="100%" height="100%" role="img" aria-labelledby="title desc">
+  <title id="title">Cryptography Math — Flying</title>
+  <desc id="desc">Animated cryptography math expressions (RSA, modular arithmetic, φ, elliptic curves, matrices, hashes, π) flying and drifting on a dark background.</desc>
+
+  <defs>
+    <!-- Background gradient & neon accent -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#030417"></stop>
+      <stop offset="100%" stop-color="#071029"></stop>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7dd3fc"></stop>
+      <stop offset="100%" stop-color="#c4b5fd"></stop>
+    </linearGradient>
+
+    <!-- soft glow -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- motion paths -->
+    <path id="path1" d="M120 120 C 320 40, 520 200, 720 120 S 1120 40, 1080 200" fill="none"></path>
+    <path id="path2" d="M60 600 C 220 480, 420 620, 600 540 S 960 460, 1140 640" fill="none"></path>
+    <path id="path3" d="M1100 80 C 850 140, 700 40, 550 150 S 250 260, 60 120" fill="none"></path>
+    <path id="path4" d="M600 350 q 260 -180 520 0" fill="none"></path>
+    <path id="path5" d="M300 200 q -220 200 0 420" fill="none"></path>
+
+    <style>
+      /* typography */
+      .math { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight:600; }
+      .big  { font-family: Georgia, serif; font-weight:700; }
+      /* color sets */
+      .c1 { fill: #7dd3fc; }
+      .c2 { fill: #a78bfa; }
+      .c3 { fill: #9be7c4; }
+      .c4 { fill: #ffd580; }
+      .dim { fill-opacity: 0.22; }
+
+      /* floating / pulsing */
+      @keyframes floatY { 0%{transform:translateY(0)} 50%{transform:translateY(-8px)} 100%{transform:translateY(0)} }
+      @keyframes floatX { 0%{transform:translateX(0)} 50%{transform:translateX(6px)} 100%{transform:translateX(0)} }
+      .float-slow { animation: floatY 6s ease-in-out infinite; transform-origin:center; }
+      .float-med  { animation: floatY 4.2s ease-in-out infinite; }
+      .float-tiny { animation: floatX 3.6s ease-in-out infinite; }
+
+      /* subtle scale */
+      @keyframes pulse { 0%{transform:scale(1)} 50%{transform:scale(1.05)} 100%{transform:scale(1)} }
+      .pulse { animation: pulse 5.5s ease-in-out infinite; }
+
+      /* small rotation */
+      @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+      .spin-slow { animation: spin 28s linear infinite; transform-origin:center; }
+
+      /* thin styling for faint background math */
+      .ghost { fill: none; stroke: rgba(125,211,252,0.08); stroke-width:1.2; }
+    </style>
+  </defs>
+
+  <!-- background -->
+  <rect width="100%" height="100%" fill="url(#bg)"></rect>
+
+  <!-- faint mathematical network shapes (pure decoration, very dim) -->
+  <g class="dim" opacity="0.14">
+    <path class="ghost" d="M200,400 q 120,-200 380,-120"></path>
+    <path class="ghost" d="M900,520 q -260,-220 -520,0"></path>
+    <circle cx="980" cy="140" r="48" class="ghost"></circle>
+  </g>
+
+  <!-- group 1: RSA modular exponent terms flying along path1 -->
+  <g font-size="22" class="math" filter="url(#glow)">
+    <g id="g-rsa-1">
+      <text class="c1">
+        <tspan font-size="18" x="0" y="0">RSA</tspan>
+        <tspan x="60" y="0" font-size="26">c ≡ m</tspan>
+        <tspan dy="-8" font-size="18">e</tspan>
+        <tspan x="150" y="0" font-size="26"> mod n</tspan>
+      </text>
+      <animateMotion dur="12s" repeatCount="indefinite" path="M120 120 C 320 40, 520 200, 720 120 S 1120 40, 1080 200"></animateMotion>
+    </g>
+
+    <g id="g-rsa-2">
+      <text class="c2" font-size="18">m = 42 · e = 65537 · n = 1000003</text>
+      <animateMotion dur="15s" repeatCount="indefinite" path="M60 100 C 260 20, 460 180, 660 100 S 1060 20, 1020 180"></animateMotion>
+    </g>
+  </g>
+
+  <!-- group 2: Euler's phi & modular inverse drifting -->
+  <g transform="translate(720,120)" class="math float-slow">
+    <text class="c3 big" font-size="34" text-anchor="middle">φ(n)</text>
+    <text class="math" x="0" y="36" font-size="18" text-anchor="middle">if n = p·q → φ(n) = (p−1)(q−1)</text>
+    <text class="math" x="0" y="64" font-size="16" text-anchor="middle">d ≡ e⁻¹ (mod φ(n))</text>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,0; -12,-6; 0,0" dur="4.8s" repeatCount="indefinite"></animateTransform>
+    </g>
+  </g>
+
+  <!-- group 3: Elliptic curve notation spinning -->
+  <g transform="translate(320,200)" class="spin-slow pulse">
+    <text class="big c2" font-size="54" text-anchor="middle">E: y² = x³ + ax + b</text>
+    <g transform="translate(0,42)" font-size="18" class="math">
+      <text class="c1" text-anchor="middle">P + Q = R (point addition)</text>
+    </g>
+  </g>
+
+  <!-- group 4: matrices & linear algebra (shuffling) -->
+  <g transform="translate(120,460)" class="math">
+    <rect x="-6" y="-22" width="220" height="110" rx="10" fill="rgba(255,255,255,0.02)"></rect>
+    <text class="c1 mono" x="6" y="0" font-size="20">Key matrix</text>
+    <g transform="translate(10,18)" font-size="18" font-family="ui-monospace">
+      <text x="0" y="26" class="c3">[ 17  42   5 ]</text>
+      <text x="0" y="54" class="c3">[  3  11   7 ]</text>
+      <text x="0" y="82" class="c3">[  2  19  13 ]</text>
+      <!-- small anims to simulate shuffle -->
+      <animateTransform attributeName="transform" type="translate" values="0,0; 6,-6; 0,0" dur="6s" repeatCount="indefinite"></animateTransform>
+    </g>
+  </g>
+
+  <!-- group 5: modular arithmetic bubbles moving along path2 -->
+  <g class="math" font-size="20">
+    <g transform="translate(0,0)">
+      <text class="c4" opacity="0.95">a ≡ b (mod n)</text>
+      <animateMotion dur="9s" repeatCount="indefinite" path="M60 600 C 220 480, 420 620, 600 540 S 960 460, 1140 640"></animateMotion>
+    </g>
+    <g transform="translate(0,0)">
+      <text class="c1" opacity="0.9">x · y ≡ z (mod p)</text>
+      <animateMotion dur="11.5s" repeatCount="indefinite" path="M60 600 C 220 480, 420 620, 600 540 S 960 460, 1140 640" begin="2s"></animateMotion>
+    </g>
+    <g transform="translate(0,0)">
+      <text class="c2" opacity="0.85">mᵉ mod n</text>
+      <animateMotion dur="14s" repeatCount="indefinite" path="M60 600 C 220 480, 420 620, 600 540 S 960 460, 1140 640" begin="4.4s"></animateMotion>
+    </g>
+  </g>
+
+  <!-- group 6: hashing and fingerprints drifting across path3 -->
+  <g class="math" font-size="20">
+    <g>
+      <text class="c3">H(m) = SHA256(m)</text>
+      <animateMotion dur="13s" repeatCount="indefinite" path="M1100 80 C 850 140, 700 40, 550 150 S 250 260, 60 120"></animateMotion>
+    </g>
+    <g>
+      <text class="c1">h = 9f86d081884c7d659a2feaa0c55ad015</text>
+      <animateMotion dur="16s" repeatCount="indefinite" path="M1100 80 C 850 140, 700 40, 550 150 S 250 260, 60 120" begin="2s"></animateMotion>
+    </g>
+  </g>
+
+  <!-- group 7: π digits and continued fraction bits orbiting center -->
+  <g transform="translate(600,350)">
+    <text class="big c1" font-size="160" text-anchor="middle" filter="url(#glow)">π</text>
+
+    <!-- orbiters: texts following short circular motions -->
+    <g>
+      <text class="math c1" font-size="14" x="220" y="0">3.14159</text>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 600 350" to="360 600 350" dur="28s" repeatCount="indefinite"></animateTransform>
+    </g>
+    <g>
+      <text class="math c2" font-size="13" x="-240" y="-6">926535</text>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="360 600 350" to="0 600 350" dur="18s" repeatCount="indefinite"></animateTransform>
+    </g>
+
+    <g>
+      <text class="math c3" font-size="12" x="140" y="110">continued: 3 + 1/(7+...)</text>
+      <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 600 350" to="360 600 350" dur="20s" repeatCount="indefinite"></animateTransform>
+    </g>
+  </g>
+
+  <!-- group 8: small moving equations for variety (along path4 & path5) -->
+  <g font-size="18" class="math">
+    <g>
+      <text class="c2">g^x mod p</text>
+      <animateMotion dur="10s" repeatCount="indefinite" path="M600 350 q 260 -180 520 0"></animateMotion>
+    </g>
+    <g>
+      <text class="c4">s = Signₖ(m)</text>
+      <animateMotion dur="13.5s" repeatCount="indefinite" path="M300 200 q -220 200 0 420" begin="1.2s"></animateMotion>
+    </g>
+  </g>
+
+  <!-- footer (tiny) -->
+  <g transform="translate(18,680)">
+    <text font-size="11" class="math" fill="#8fbfe6" opacity="0.7">Pure math — cryptography expressions flying. No shell, no UI.</text>
+  </g>
+</svg>

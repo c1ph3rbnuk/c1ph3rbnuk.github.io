@@ -1,0 +1,196 @@
+<!-- Cryptographer Animated SVG -->
+<svg width="100%" height="100%" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Cryptographer Illustration</title>
+  <desc id="desc">Spinning cipher rotors, flowing ciphertext, a blinking terminal cursor, and a pulsing lock icon over a dark gradient.</desc>
+
+  <!-- ====== Definitions ====== -->
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"></stop>
+      <stop offset="50%" stop-color="#0e1b3a"></stop>
+      <stop offset="100%" stop-color="#0b1020"></stop>
+    </linearGradient>
+
+    <!-- Neon gradient for highlights -->
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#67e8f9"></stop>
+      <stop offset="100%" stop-color="#22d3ee"></stop>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for lock -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="g"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="g"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <!-- Path for flowing ciphertext -->
+    <path id="cipherPath" d="M 40 120 C 240 40, 360 200, 560 120 S 880 40, 920 160"></path>
+
+    <!-- Ticks used on rotors -->
+    <g id="rotorTicks">
+      <circle r="90" fill="none" stroke="#1f2937" stroke-width="16"></circle>
+      <g stroke="#93c5fd" stroke-width="4" stroke-linecap="round" opacity="0.85">
+        <!-- 12 ticks -->
+        <line x1="0" y1="-90" x2="0" y2="-74"></line>
+        <line x1="45" y1="-78" x2="39" y2="-64"></line>
+        <line x1="78" y1="-45" x2="64" y2="-39"></line>
+        <line x1="90" y1="0" x2="74" y2="0"></line>
+        <line x1="78" y1="45" x2="64" y2="39"></line>
+        <line x1="45" y1="78" x2="39" y2="64"></line>
+        <line x1="0" y1="90" x2="0" y2="74"></line>
+        <line x1="-45" y1="78" x2="-39" y2="64"></line>
+        <line x1="-78" y1="45" x2="-64" y2="39"></line>
+        <line x1="-90" y1="0" x2="-74" y2="0"></line>
+        <line x1="-78" y1="-45" x2="-64" y2="-39"></line>
+        <line x1="-45" y1="-78" x2="-39" y2="-64"></line>
+      </g>
+      <circle r="10" fill="#22d3ee"></circle>
+    </g>
+
+    <!-- Simple padlock -->
+    <g id="lock">
+      <rect x="-20" y="-5" width="40" height="30" rx="5" ry="5" fill="url(#neon)" opacity="0.9"></rect>
+      <rect x="-16" y="-1" width="32" height="22" rx="4" ry="4" fill="#0b1020"></rect>
+      <path d="M -10 -5 v-10 a 10 10 0 0 1 20 0 v10" fill="none" stroke="#22d3ee" stroke-width="4"></path>
+      <circle cx="0" cy="10" r="3.5" fill="#22d3ee"></circle>
+    </g>
+
+    <!-- Key icon -->
+    <g id="key">
+      <circle r="8" fill="none" stroke="#a7f3d0" stroke-width="3"></circle>
+      <path d="M8 0 h20 l6 -6 m-6 6 l6 6" fill="none" stroke="#a7f3d0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+    </g>
+
+    <!-- Type mask for terminal text reveal -->
+    <mask id="typeMask">
+      <rect x="0" y="0" width="0" height="100%" fill="#fff">
+        <animate attributeName="width" values="0;560" dur="5s" begin="0.3s" fill="freeze"></animate>
+      </rect>
+    </mask>
+
+    <!-- Cursor blink -->
+    <style>
+      @keyframes rotateSlow  { from {transform:rotate(0deg)} to {transform:rotate(360deg)} }
+      @keyframes rotateMed   { from {transform:rotate(0deg)} to {transform:rotate(-360deg)} }
+      @keyframes rotateFast  { from {transform:rotate(0deg)} to {transform:rotate(360deg)} }
+      @keyframes floatY      { 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+      @keyframes pulse       { 0%,100%{opacity:0.65; transform:scale(1)} 50%{opacity:1; transform:scale(1.08)} }
+      @keyframes dash        { from { stroke-dashoffset: 0 } to { stroke-dashoffset: -900 } }
+      @keyframes blink       { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+      @keyframes drift       { from { offset-distance: 0% } to { offset-distance: 100% } }
+
+      .rotor.r1 { animation: rotateSlow 24s linear infinite; transform-origin: center; }
+      .rotor.r2 { animation: rotateMed  12s linear infinite; transform-origin: center; }
+      .rotor.r3 { animation: rotateFast  6s linear infinite; transform-origin: center; }
+
+      .cipherflow {
+        stroke-dasharray: 12 10;
+        animation: dash 10s linear infinite;
+      }
+
+      .cursor { animation: blink 1s steps(1) infinite; }
+      .float  { animation: floatY 3s ease-in-out infinite; }
+      .pulse  { animation: pulse 2.4s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- ====== Background ====== -->
+  <rect width="100%" height="100%" fill="url(#bg)"></rect>
+
+  <!-- ====== Flowing Ciphertext Path ====== -->
+  <path d="M 40 120 C 240 40, 360 200, 560 120 S 880 40, 920 160" fill="none" stroke="#0ea5e9" stroke-width="2.5" class="cipherflow" opacity="0.6"></path>
+
+  <text font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="18" fill="#67e8f9" opacity="0.9">
+    <textPath href="#cipherPath" startOffset="0%">
+      7A 6E 63 72 79 70 74 20 69 73 20 61 20 70 75 7A 7A 6C 65 2E 2E 2E 20 70 72 69 6D 65 73 20 2C 20 6B 65 79 73 2C 20 6E 6F 6E 63 65 73 21
+      <animate attributeName="startOffset" values="0%;100%" dur="14s" repeatCount="indefinite"></animate>
+    </textPath>
+  </text>
+
+  <!-- ====== Rotor Stack (left) ====== -->
+  <g transform="translate(220,300)">
+    <g class="rotor r1" filter="url(#glow)">
+      <use href="#rotorTicks"></use>
+      <text y="6" text-anchor="middle" font-family="monospace" font-size="20" fill="#60a5fa">I</text>
+    </g>
+    <g transform="translate(200,0)" class="rotor r2" filter="url(#glow)">
+      <use href="#rotorTicks"></use>
+      <text y="6" text-anchor="middle" font-family="monospace" font-size="20" fill="#60a5fa">II</text>
+    </g>
+    <g transform="translate(400,0)" class="rotor r3" filter="url(#glow)">
+      <use href="#rotorTicks"></use>
+      <text y="6" text-anchor="middle" font-family="monospace" font-size="20" fill="#60a5fa">III</text>
+    </g>
+  </g>
+
+  <!-- ====== Lock & Key (subtle motion) ====== -->
+  <g transform="translate(820,120)" class="float">
+    <g filter="url(#softGlow)" class="pulse">
+      <use href="#lock"></use>
+    </g>
+  </g>
+
+  <g transform="translate(820,180)">
+    <g style="offset-path: path('M 0 0 Q -30 20 0 40 Q 30 60 0 80'); offset-rotate: 0deg;">
+      <g style="animation: drift 5s ease-in-out infinite;">
+        <use href="#key"></use>
+      </g>
+    </g>
+  </g>
+
+  <!-- ====== Terminal Panel (right) ====== -->
+  <g transform="translate(520,310)">
+    <rect x="0" y="0" width="420" height="180" rx="12" fill="#0f172a" stroke="#1f2937"></rect>
+    <rect x="0" y="-28" width="420" height="28" rx="10" fill="#111827"></rect>
+    <circle cx="16" cy="-14" r="5" fill="#ef4444"></circle><circle cx="32" cy="-14" r="5" fill="#f59e0b"></circle><circle cx="48" cy="-14" r="5" fill="#10b981"></circle>
+
+    <g transform="translate(16,20)" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="16">
+      <text fill="#94a3b8">➜</text>
+      <text x="24" fill="#38bdf8"> crypto</text>
+      <text x="84" fill="#a7f3d0"> encrypt</text>
+      <text x="160" fill="#e5e7eb">"HELLO WORLD"</text>
+
+      <!-- Typing line -->
+      <g transform="translate(0,28)" mask="url(#typeMask)">
+        <text fill="#e5e7eb">
+          output: 1F A2 0C 5B 9E 7D 43 2F 8C 11
+        </text>
+      </g>
+      <rect class="cursor" x="212" y="13" width="8" height="18" fill="#e5e7eb" rx="1"></rect>
+    </g>
+  </g>
+
+  <!-- ====== Subtle network graph (bottom) ====== -->
+  <g opacity="0.5">
+    <circle cx="80" cy="430" r="3" fill="#22d3ee"></circle><circle cx="160" cy="470" r="3" fill="#22d3ee"></circle>
+    <circle cx="260" cy="420" r="3" fill="#22d3ee"></circle><circle cx="360" cy="500" r="3" fill="#22d3ee"></circle>
+    <circle cx="460" cy="440" r="3" fill="#22d3ee"></circle><circle cx="560" cy="480" r="3" fill="#22d3ee"></circle>
+    <circle cx="660" cy="430" r="3" fill="#22d3ee"></circle><circle cx="760" cy="495" r="3" fill="#22d3ee"></circle>
+    <circle cx="860" cy="450" r="3" fill="#22d3ee"></circle>
+
+    <polyline points="80,430 160,470 260,420 360,500 460,440 560,480 660,430 760,495 860,450" fill="none" stroke="#22d3ee" stroke-width="1.5" opacity="0.5"></polyline>
+  </g>
+
+  <!-- ====== Title ====== -->
+  <g transform="translate(40,70)">
+    <text font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell" font-size="40" fill="url(#neon)" filter="url(#glow)" letter-spacing="2">
+      CRYPTOGRAPHER
+    </text>
+    <text y="28" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="14" fill="#a5b4fc" opacity="0.8">
+      keys · ciphers · proofs · protocols
+    </text>
+  </g>
+</svg>
