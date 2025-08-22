@@ -1,0 +1,58 @@
+#footer-consent-management-url {
+    color: #37465a;
+    font-family: Montserrat, sans-serif;
+    font-size: .8669rem;
+    font-weight: 400;
+
+    height: 1.75rem;
+    left: 12.5rem;
+    line-height: 1.75rem;
+    text-align: left;
+    top: 16.5625rem;
+    width: 10rem;
+    z-index: 37;
+}
+
+@media screen and (min-width: 768px) {
+    #footer-consent-management-url {
+        left: 29.9375rem;
+        top: 10.6875rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-contact-url {
+        left: 12.5rem !important;
+        top: 14.5rem !important;
+    }
+}
+
+#footer-consent-management-url p {
+    color: #daedf9;
+    font-size: .8669rem;
+    line-height: 1.75rem;
+    text-align: left;
+}
+
+#footer-consent-management-url a {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    #onetrust-banner-sdk div.onetrust-banner-options {
+        max-width: unset;
+    }
+}
+
+section.instapage-footer-discover {
+    min-height: 18rem;
+}
+section.instapage-footer-discover .section-block {
+    min-height: 100%;
+}
+
+@media (max-width: 767px) {
+    section.instapage-footer-discover {
+        min-height: 30rem;
+    }
+}

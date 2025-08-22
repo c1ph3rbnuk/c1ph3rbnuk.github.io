@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Socs on Deathstalker</title>
+    <link>http://localhost:1313/series/socs/</link>
+    <description>Recent content in Socs on Deathstalker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Peter Kinyumu</copyright>
+    <lastBuildDate>Wed, 16 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/series/socs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Incident Response(IR).</title>
+      <link>http://localhost:1313/soc/ir/</link>
+      <pubDate>Wed, 16 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/ir/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to Logs.</title>
+      <link>http://localhost:1313/soc/introduction_to_logs/</link>
+      <pubDate>Sat, 05 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/introduction_to_logs/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Directory Traversal</title>
+      <link>http://localhost:1313/soc/path_traversal/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/path_traversal/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Email-Based Phishing - Anatomy</title>
+      <link>http://localhost:1313/soc/email_anatomy/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/email_anatomy/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SQL Injection</title>
+      <link>http://localhost:1313/soc/web_attacks/</link>
+      <pubDate>Thu, 27 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/web_attacks/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Endpoint Security</title>
+      <link>http://localhost:1313/soc/endpoint_security/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/endpoint_security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to WebApplication Security.</title>
+      <link>http://localhost:1313/soc/intro_to_web_security/</link>
+      <pubDate>Fri, 21 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/intro_to_web_security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to Tshark</title>
+      <link>http://localhost:1313/soc/introduction_to_tshark/</link>
+      <pubDate>Thu, 20 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/introduction_to_tshark/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to Wireshark</title>
+      <link>http://localhost:1313/soc/intro_to_wireshark/</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/intro_to_wireshark/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Intro to Network Security</title>
+      <link>http://localhost:1313/soc/network_security/</link>
+      <pubDate>Mon, 17 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/network_security/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Networking Refresher</title>
+      <link>http://localhost:1313/soc/network_refresher/</link>
+      <pubDate>Sat, 15 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/network_refresher/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Introduction to SOC</title>
+      <link>http://localhost:1313/soc/introduction_to_soc/</link>
+      <pubDate>Fri, 14 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/soc/introduction_to_soc/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

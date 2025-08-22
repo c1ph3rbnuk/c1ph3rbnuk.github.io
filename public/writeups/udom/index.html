@@ -1,0 +1,2228 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="true"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  <title>UDOM End of year CTF &middot; Deathstalker</title>
+    <meta name="title" content="UDOM End of year CTF &middot; Deathstalker">
+
+  
+  <meta name="description" content="A writeup for the UDOM end of year CTF(2022)">
+  <meta name="keywords" content="forensics,web,cryptography,OSINT,Steg,">
+  
+  
+  <link rel="canonical" href="http://localhost:1313/writeups/udom/">
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.d7672814413dccdcf76c504d9b0ebb8d0f964dbe6b30a3d4b25b15809a94c2eb732d99898aded2009aacdd1fa8b17cea1369fd81560790cd355aee00bbd142fd.css"
+    integrity="sha512-12coFEE9zNz3bFBNmw67jQ&#43;WTb5rMKPUslsVgJqUwutzLZmJit7SAJqs3R&#43;osXzqE2n9gVYHkM01Wu4Au9FC/Q==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js"
+    integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj&#43;e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script>
+  
+  
+    
+    
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.a187118b41a60744310065c567365de85730c8495301d0ebae41810cc6f7a47432b1de7d4f3b11338959f1ac50c266be6b4b73acf6bf770016eb59b602cc1aa0.js"
+      integrity="sha512-oYcRi0GmB0QxAGXFZzZd6FcwyElTAdDrrkGBDMb3pHQysd59TzsRM4lZ8axQwma&#43;a0tzrPa/dwAW61m2AswaoA=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/writeups/udom/">
+  <meta property="og:site_name" content="Deathstalker">
+  <meta property="og:title" content="UDOM End of year CTF">
+  <meta property="og:description" content="A writeup for the UDOM end of year CTF(2022)">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="writeups">
+    <meta property="article:published_time" content="2022-01-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-01-02T00:00:00+00:00">
+    <meta property="article:tag" content="Forensics">
+    <meta property="article:tag" content="Web">
+    <meta property="article:tag" content="Cryptography">
+    <meta property="article:tag" content="OSINT">
+    <meta property="article:tag" content="Steg">
+    <meta property="og:image" content="http://localhost:1313/writeups/udom/feature.png">
+
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/writeups/udom/feature.png">
+  <meta name="twitter:title" content="UDOM End of year CTF">
+  <meta name="twitter:description" content="A writeup for the UDOM end of year CTF(2022)">
+<meta name="twitter:image" content="http://localhost:1313/writeups/udom/feature.png">
+    <meta property="og:image" content="http://localhost:1313/writeups/udom/feature.png">
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "Writeups",
+    "name": "UDOM End of year CTF",
+    "headline": "UDOM End of year CTF",
+    "description": "A writeup for the UDOM end of year CTF(2022)",
+    
+    "inLanguage": "en",
+    "url" : "http:\/\/localhost:1313\/writeups\/udom\/",
+    "author" : {
+      "@type": "Person",
+      "name": "Peter Kinyumu"
+    },
+    "copyrightYear": "2022",
+    "dateCreated": "2022-01-02T00:00:00\u002b00:00",
+    "datePublished": "2022-01-02T00:00:00\u002b00:00",
+    
+    "dateModified": "2022-01-02T00:00:00\u002b00:00",
+    
+    "keywords": ["forensics","web","cryptography","OSINT","Steg"],
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2028"
+  }]
+  </script>
+
+
+
+  
+  
+    <meta name="author" content="Peter Kinyumu">
+  
+  
+    
+      
+        
+          <link href="sweetimpurities11f@gmail.com" rel="me">
+        
+      
+        
+          <link href="https://github.com/c1ph3rbnuk" rel="me">
+        
+      
+        
+          <link href="https://x.com/c1ph3rbnuk" rel="me">
+        
+      
+    
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+</head>
+<body
+    class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 pt-[2px] pr-0 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium text-gray-500 hover:text-gray-900">
+          Deathstalker
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/posts/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Posts">
+    Posts
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/projects/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Projects">
+    Projects
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/writeups/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="Writeups">
+    Writeups
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href="/about/"
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="About Me">
+    About
+  </p>
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+  
+  <p class="text-base font-medium" title="">
+    
+  </p>
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <div class=" flex items-center">
+        <button
+          id="appearance-switcher"
+          aria-label="Dark mode switcher"
+          type="button"
+          class="text-base hover:text-primary-600 dark:hover:text-primary-400">
+          <div class="flex items-center justify-center dark:hidden">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+          </div>
+          <div class="items-center justify-center hidden dark:flex">
+            <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+          </div>
+        </button>
+      </div>
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+      <button
+        id="appearance-switcher-mobile"
+        aria-label="Dark mode switcher"
+        type="button"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1">
+        <div class="flex items-center justify-center dark:hidden">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z"/></svg>
+</span>
+        </div>
+        <div class="items-center justify-center hidden dark:flex">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z"/></svg>
+</span>
+        </div>
+      </button>
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/posts/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Posts">
+      Posts
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/projects/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Projects">
+      Projects
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/writeups/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="Writeups">
+      Writeups
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/about/"
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="About Me">
+      About
+    </p>
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      
+    </p>
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+      
+      
+      
+      
+        
+
+
+    <div id="hero" class="h-[150px] md:h-[200px]"></div>
+  
+  <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom">
+    
+    
+      
+    
+    <img
+      id="background-image"
+      src="/writeups/udom/feature_hu_b0accad64b105ea3.png"
+      alt="Background Image"
+      class="absolute inset-0 w-full h-full object-cover">
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-neutral dark:from-neutral-800 to-transparent mix-blend-normal"></div>
+    <div
+      class="absolute inset-0 opacity-60 bg-gradient-to-t from-neutral dark:from-neutral-800 to-neutral-100 dark:to-neutral-800 mix-blend-normal"></div>
+  </div>
+
+  
+    <div
+      id="background-blur"
+      class="fixed opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl"></div>
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/background-blur.min.0ad33cb9c066f652728b2cc09c9ceaf32645544f48e8b6b38f120d86f433ed997da275a49e6151fe0176430c45376812708d84727f3f969101fb44a4345b3f34.js"
+      integrity="sha512-CtM8ucBm9lJyiyzAnJzq8yZFVE9I6LazjxINhvQz7Zl9onWknmFR/gF2QwxFN2gScI2Ecn8/lpEB&#43;0SkNFs/NA=="
+      data-target-id="background-blur"
+      data-image-id="background-image"
+      data-image-url="/writeups/udom/feature.png"></script>
+  
+      
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+        <ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden">
+  
+  
+    
+  
+    
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/"
+      >Deathstalker</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="inline">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/writeups/"
+      >Writeups</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+  
+  <li class="hidden">
+    <a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href="/writeups/udom/"
+      >UDOM End of year CTF</a
+    ><span class="px-1 text-primary-500">/</span>
+  </li>
+
+</ol>
+
+
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        UDOM End of year CTF
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+    
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="2022-01-02T00:00:00&#43;00:00">2 January 2022</time><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_writeups/UDOM/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_writeups/UDOM/index.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  <button
+    id="button_likes"
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
+    </span>
+    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
+    >
+    <span id="button_likes_text">&nbsp;Like</span>
+  </button>
+</span><span class="px-2 text-primary-500">&middot;</span>
+
+
+
+<script
+  type="text/javascript"
+  src="/js/zen-mode.min.9814dee9614d32aeb56239d118edfe20acd6231424f9b19c2dd48835038414130a5e946c0d1c9087d60e60e31840c9babfd217e3d4b95643dc8d651a71ccdf4a.js"
+  integrity="sha512-mBTe6WFNMq61YjnRGO3&#43;IKzWIxQk&#43;bGcLdSINQOEFBMKXpRsDRyQh9YOYOMYQMm6v9IX49S5VkPcjWUacczfSg=="></script>
+
+<span class="mb-[2px]">
+  <span
+    id="zen-mode-button"
+    class="text-lg hover:text-primary-500"
+    title="Enable zen mode"
+    data-title-i18n-disable="Enable zen mode"
+    data-title-i18n-enable="Disable zen mode">
+    <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px">
+    <path fill="currentColor" d="M 12.980469 4 C 9.1204688 4 5.9804688 7.14 5.9804688 11 L 6 26 L 9.9804688 26 L 9.9804688 11 C 9.9804688 9.35 11.320469 8 12.980469 8 L 40.019531 8 C 41.679531 8 43.019531 9.35 43.019531 11 L 43.019531 39 C 43.019531 40.65 41.679531 42 40.019531 42 L 29 42 C 29 43.54 28.420938 44.94 27.460938 46 L 40.019531 46 C 43.879531 46 47.019531 42.86 47.019531 39 L 47.019531 11 C 47.019531 7.14 43.879531 4 40.019531 4 L 12.980469 4 z M 7 28 C 4.794 28 3 29.794 3 32 L 3 42 C 3 44.206 4.794 46 7 46 L 23 46 C 25.206 46 27 44.206 27 42 L 27 32 C 27 29.794 25.206 28 23 28 L 7 28 z M 7 32 L 23 32 L 23.001953 42 L 7 42 L 7 32 z"/>
+</svg></span></span>
+  </span>
+</span>
+
+    
+
+    
+    
+  </div>
+
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+  
+
+  
+  
+    <div class="flex flex-row flex-wrap items-center">
+      
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/forensics/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Forensics
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/web/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Web
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/cryptography/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Cryptography
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/osint/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    OSINT
+  </span>
+</span>
+</a
+              >
+            
+              <a class="relative mt-[0.5rem] mr-2" href="/tags/steg/"
+                ><span class="flex cursor-pointer">
+  <span
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    Steg
+  </span>
+</span>
+</a
+              >
+            
+          
+        
+      
+    </div>
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    
+    
+<div class="flex author">
+  
+    
+    
+      
+    
+    
+      
+        
+      
+      <img
+        class="!mt-0 !mb-0 h-24 w-24 rounded-full ltr:mr-4 rtl:ml-4"
+        width="96"
+        height="96"
+        alt="Peter Kinyumu"
+        src="/img/profile_hu_95cb72b7293298ca.jpg">
+    
+  
+  <div class="place-self-center">
+    
+      <div class="text-[0.6rem] uppercase leading-3 text-neutral-500 dark:text-neutral-400">
+        Author
+      </div>
+      <div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+        Peter Kinyumu
+      </div>
+    
+    
+      <div class="text-sm text-neutral-700 dark:text-neutral-400">I like to make sense out of nonsense</div>
+    
+    <div class="text-2xl sm:text-lg">
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="sweetimpurities11f@gmail.com"
+          target="_blank"
+          aria-label="Email"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M207.8 20.73c-93.45 18.32-168.7 93.66-187 187.1c-27.64 140.9 68.65 266.2 199.1 285.1c19.01 2.888 36.17-12.26 36.17-31.49l.0001-.6631c0-15.74-11.44-28.88-26.84-31.24c-84.35-12.98-149.2-86.13-149.2-174.2c0-102.9 88.61-185.5 193.4-175.4c91.54 8.869 158.6 91.25 158.6 183.2l0 16.16c0 22.09-17.94 40.05-40 40.05s-40.01-17.96-40.01-40.05v-120.1c0-8.847-7.161-16.02-16.01-16.02l-31.98 .0036c-7.299 0-13.2 4.992-15.12 11.68c-24.85-12.15-54.24-16.38-86.06-5.106c-38.75 13.73-68.12 48.91-73.72 89.64c-9.483 69.01 43.81 128 110.9 128c26.44 0 50.43-9.544 69.59-24.88c24 31.3 65.23 48.69 109.4 37.49C465.2 369.3 496 324.1 495.1 277.2V256.3C495.1 107.1 361.2-9.332 207.8 20.73zM239.1 304.3c-26.47 0-48-21.56-48-48.05s21.53-48.05 48-48.05s48 21.56 48 48.05S266.5 304.3 239.1 304.3z"/></svg>
+</span></span></a
+        >
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://github.com/c1ph3rbnuk"
+          target="_blank"
+          aria-label="Github"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span></span></a
+        >
+      
+        <a
+          class="px-1 hover:text-primary-700 dark:hover:text-primary-400"
+          href="https://x.com/c1ph3rbnuk"
+          target="_blank"
+          aria-label="Twitter"
+          rel="me noopener noreferrer"
+          ><span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+</span></span></a
+        >
+      
+    
+  </div>
+
+</div>
+  </div>
+</div>
+
+  
+
+  
+
+  
+    <div class="mb-5"></div>
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last ltr:lg:pl-8 rtl:lg:pr-8">
+          <div class="toc ltr:pl-5 rtl:pr-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cryptography">Cryptography</a>
+          <ul>
+            <li><a href="#warm-up">warm-up</a></li>
+            <li><a href="#baba">BABA</a></li>
+            <li><a href="#vigecrack">vigecrack</a></li>
+          </ul>
+        </li>
+        <li><a href="#osint">OSINT</a>
+          <ul>
+            <li><a href="#place">place</a></li>
+          </ul>
+        </li>
+        <li><a href="#forensics">Forensics</a>
+          <ul>
+            <li><a href="#file">file</a></li>
+            <li><a href="#file2">file2</a></li>
+          </ul>
+        </li>
+        <li><a href="#steganography">Steganography</a>
+          <ul>
+            <li><a href="#simple-stego">Simple stego</a></li>
+            <li><a href="#happy-new-year">happy new year</a></li>
+            <li><a href="#data-1">Data 1</a></li>
+          </ul>
+        </li>
+        <li><a href="#web">Web</a>
+          <ul>
+            <li><a href="#turaco">Turaco</a></li>
+          </ul>
+        </li>
+        <li><a href="#two-step-snake">Two-step-snake</a>
+          <ul>
+            <li><a href="#wrceb">wRceb</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 ltr:-ml-5 ltr:pl-5 rtl:-mr-5 rtl:pr-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#cryptography">Cryptography</a>
+          <ul>
+            <li><a href="#warm-up">warm-up</a></li>
+            <li><a href="#baba">BABA</a></li>
+            <li><a href="#vigecrack">vigecrack</a></li>
+          </ul>
+        </li>
+        <li><a href="#osint">OSINT</a>
+          <ul>
+            <li><a href="#place">place</a></li>
+          </ul>
+        </li>
+        <li><a href="#forensics">Forensics</a>
+          <ul>
+            <li><a href="#file">file</a></li>
+            <li><a href="#file2">file2</a></li>
+          </ul>
+        </li>
+        <li><a href="#steganography">Steganography</a>
+          <ul>
+            <li><a href="#simple-stego">Simple stego</a></li>
+            <li><a href="#happy-new-year">happy new year</a></li>
+            <li><a href="#data-1">Data 1</a></li>
+          </ul>
+        </li>
+        <li><a href="#web">Web</a>
+          <ul>
+            <li><a href="#turaco">Turaco</a></li>
+          </ul>
+        </li>
+        <li><a href="#two-step-snake">Two-step-snake</a>
+          <ul>
+            <li><a href="#wrceb">wRceb</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+
+            
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>This was an end of year jeopardy style CTF that ran from <strong>12:00pm 31/12/2022</strong> to <strong>9:00pm 01/01/2023</strong> organized by our friends from Tanzania. It was a solo run CTF challenge that each player played alone. I managed position 7 finally. The CTF challenges ranged from Steg(were preety tough), Crypto, Forensics, Web, etc..<br>
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/leaderboard_hu_c668632dbe378b8b.png  330w,
+      /writeups/udom/leaderboard_hu_b5fd64d8d517b957.png  660w,
+      /writeups/udom/leaderboard_hu_3937c414ef4f607d.png 1280w
+    "
+    data-zoom-src="/writeups/udom/leaderboard.png"
+    src="/writeups/udom/leaderboard.png">
+
+  
+</figure>
+</p>
+<hr>
+<p>In this post i will be covering step by step solutions to challenges i solved.</p>
+
+<h3 class="relative group">Cryptography 
+    <div id="cryptography" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#cryptography" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">warm-up 
+    <div id="warm-up" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#warm-up" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<blockquote>
+<p>use your mental skills to edit some part of the flag you will get after decoding the cipher: <code>NWHF{p2Ev9fX_M9_vkrIM9Zk3iAR}</code>&rsquo;''</p></blockquote>
+<p>This was a ceasar c1pher. One of my best online tools for decoding and decrypting cryptographic algorithms is <a
+  href="https://www.dcode.fr/caesar-cipher"
+    target="_blank"
+  >dcode</a>. It&rsquo;s a pool of cryptographic tool to crack most encodings and encryptions. So, bruteforcing against all possible 26 keys of the ceasar cipher gets us this flag <code>UDOM{w2Lc9mE_T9_cryPT9Gr3pHY}</code>.The flag stated we should edit some part of the flag to make sense. Editing the flag to read <strong>&ldquo;welcome to cryptograpghy&rdquo;</strong> in 1337 speak, 2 becomes 3, 9 becomes 0, and 3 becomes 4. Therefore the final flag was <code>UDOM{w3Lc0mE_T0_cryPT0Gr4PHy}</code>.</p>
+
+<h4 class="relative group">BABA 
+    <div id="baba" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#baba" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/baba_hu_6951da1998254501.png  330w,
+      /writeups/udom/baba_hu_e83f8756ace70d9b.png  660w,
+      /writeups/udom/baba_hu_cc41f33293628062.png 1280w
+    "
+    data-zoom-src="/writeups/udom/baba.png"
+    src="/writeups/udom/baba.png">
+
+  
+</figure>
+<br>
+Our previous tool <strong>dcode</strong> has a tool called <a
+  href="https://www.dcode.fr/cipher-identifier"
+    target="_blank"
+  >cipher identifier</a>(I told you it&rsquo;s a collection of tools) that helps you recognize the type of encryption or encoding that was used to mangle the ciphertext. Slamming our ciphertext it and the first hit tells us that this is a Beacon cipher which is a type of substitution cipher. Again our dcode is a &ldquo;one size fits all&rdquo; tool. Using <a
+  href="https://www.dcode.fr/bacon-cipher"
+    target="_blank"
+  >Beacon cipher</a> against our blob we get <code>FLAGWHEREAREMYEGGS</code>. Following our flag formats <code>UDOM{XXX}</code> we can easily recognize that the flag is <code>UDOM{WHERE_ARE_MY_EGGS}</code>.</p>
+
+<h4 class="relative group">vigecrack 
+    <div id="vigecrack" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#vigecrack" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<blockquote>
+<p>In this challenge we just had the following ciphertext <code>ZDQQ{i3f3_k3_q0_a1gGr3ffg!!!}</code>.</p></blockquote>
+<p>From the challenge name we can assume that this is a vigenere cipher. Vigenere cipher is a type of substitution cipher but it uses different cipher alphabets for encryption. Using this decode <a
+  href="https://www.dcode.fr/vigenere-cipher"
+    target="_blank"
+  >Vigenere decoder</a> and knowing part of our flag is <strong>UDOM</strong> we can use known plaintext attack against it.<br>
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/vigenere_hu_3c58437d17448b96.png  330w,
+      /writeups/udom/vigenere_hu_fd05fe158d8ae06c.png  660w,
+      /writeups/udom/vigenere_hu_2ca379dcc2343ce3.png 1280w
+    "
+    data-zoom-src="/writeups/udom/vigenere.png"
+    src="/writeups/udom/vigenere.png">
+
+  
+</figure>
+<br>
+We get the flag <code>UDOM{d3f3_i3_m0_v1gEn3afe!!!}</code>. It wasn&rsquo;t the flag though because it doesn&rsquo;t make sensse yet. I had to get a hint for 200 points &#x1f62d; The hint said <code>social media is the key</code>. I remembered seeing the word <strong>FACE</strong> besides my flag. Well, dcode is very generous to even include the key that was used used for decryption. I finally figured that the full key was <strong>FACEBOOK</strong>. This time i used the &ldquo;Knowing the key decryption method&rdquo; and WALLAH!! there was our final flag <code>UDOM{h3r3_w3_g0_v1gEn3ers!!!}</code> &#x263a;&#xfe0f;<br>
+This challenge reminded me of the quote that says <strong>&ldquo;It&rsquo;s a skill of great men to make sense out of nonsense&rdquo;</strong> &#x1f603;</p>
+
+<h3 class="relative group">OSINT 
+    <div id="osint" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#osint" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Time to get detective with OSINT challenges.</p>
+
+<h4 class="relative group">place 
+    <div id="place" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#place" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/place_hu_afc814b68aff0585.png  330w,
+      /writeups/udom/place_hu_e8a7b8362be132ec.png  660w,
+      /writeups/udom/place_hu_39da2addbe4b542c.png 1280w
+    "
+    data-zoom-src="/writeups/udom/place.png"
+    src="/writeups/udom/place.png">
+
+  
+</figure>
+ 
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/maporomoko_hu_87549ffb43b8b6cb.jpg  330w,
+      /writeups/udom/maporomoko_hu_7ecd6335b7c0cc34.jpg  660w,
+      /writeups/udom/maporomoko_hu_c82dc5a2a5e19e2c.jpg 1280w
+    "
+    data-zoom-src="/writeups/udom/maporomoko.jpg"
+    src="/writeups/udom/maporomoko.jpg">
+
+  
+</figure>
+<br>
+This was easy peasy. Doing google reverse image search you&rsquo;ll find this link <a
+  href="https://www.tripadvisor.com/Attractions-g3532526-Activities-Rukwa_Region.html"
+    target="_blank"
+  >Kalambo falls</a> from tripadvisor that tells you that the falls is in Rukwa region. Following the flag formart the flag becomes <code>UDOM{Rukwa}</code></p>
+
+<h3 class="relative group">Forensics 
+    <div id="forensics" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#forensics" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">file 
+    <div id="file" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#file" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/file1_hu_f74304b834f0e738.png  330w,
+      /writeups/udom/file1_hu_dbf8ab278f898fc.png  660w,
+      /writeups/udom/file1_hu_14cb78a733b4198f.png 1280w
+    "
+    data-zoom-src="/writeups/udom/file1.png"
+    src="/writeups/udom/file1.png">
+
+  
+</figure>
+<br>
+Attached was a file names <strong>flag.zip</strong>. Running <code>file flag,zip</code> identified the file as Zip file. I unzipped the file use <code>unzip file.pdf</code> and then determined the file type again with <code>file flag.pdf</code>. It is always a good start to identify a file with it&rsquo;s magic byte first. <strong>DON&rsquo;T TRUST EXTENSIONS</strong>. A magic byte is usually a specific number usually in hexadecimal that is used to identify file type even if the extension is changed. And bang!!! &ldquo;the pdf was not a pdf&rdquo;, it&rsquo;s actually a WAVE audio file. Wave audio file usualy take the <strong>.wav</strong> extension. Saved it with the right extension and opened it with an audio player software and what do i hear; i hear the famous beeps that identifies it as Morse code. I have this online favourite tool for decoding morsecode <a
+  href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html"
+    target="_blank"
+  >Morse code decoder</a>. The text decodes to <strong>M 0 R S 3 S 0 U N D 5 B 3 T T 3 R 1 N M I L 1 T A R 1 3 S</strong>. Wrapping it in our flag format becomes <code>UDOM{M0RS3S0UND5B3TT3R1NMIL1TAR13S}</code></p>
+
+<h4 class="relative group">file2 
+    <div id="file2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#file2" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/file2_hu_a57b3471dd02b48c.png  330w,
+      /writeups/udom/file2_hu_3722d45a941625c2.png  660w,
+      /writeups/udom/file2_hu_801f11d7a6d8b3a.png 1280w
+    "
+    data-zoom-src="/writeups/udom/file2.png"
+    src="/writeups/udom/file2.png">
+
+  
+</figure>
+<br>
+A zip file was provided containing a folder name <strong>UDOM_people_folder</strong>. The folder had a totaling 9081 files(subfolders and files). All the files were in txt. We had to find the flag. A needle in a haystack right?&#x1f628; Yeah, forensics causes headache &#x1f605;. Unix has a tool called grep with helps you print all matches to a pattern. We know the flag starts with <strong>UDOM{</strong>. Let&rsquo;s grep that and hope to find a match. 
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/grep_hu_ac92060905d5240a.png  330w,
+      /writeups/udom/grep_hu_a1e21e5ffe1feb3c.png  660w,
+      /writeups/udom/grep_hu_e77971ef3b4d1d51.png 1280w
+    "
+    data-zoom-src="/writeups/udom/grep.png"
+    src="/writeups/udom/grep.png">
+
+  
+</figure>
+
+We found a match but it&rsquo;s not the real flag, it&rsquo;s a bait &#x1f612;. How did they even know i&rsquo;ll fall for that? Well, time to get creative. the decription says &ldquo;Forensics causes headaches&rdquo; . To me it means &ldquo;It&rsquo;s hard&rdquo;. How about we try to find a match on the word &ldquo;<strong>hard</strong>&rdquo;. Ooh&#x1f62e; There is something spicy at the end ladies and gentlemen.  
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/flag_hu_8c76f6e01282d1a5.png  330w,
+      /writeups/udom/flag_hu_ee94aa473872b328.png  660w,
+      /writeups/udom/flag_hu_48918dbdf9b1e572.png 1280w
+    "
+    data-zoom-src="/writeups/udom/flag.png"
+    src="/writeups/udom/flag.png">
+
+  
+</figure>
+<br>
+And that was the flag <code>UDOM{362d414349412454414d56455459393044392f4a43575a393145424e2d41484342334938583642495745344a432e3946205543584237484341343844474443584738}</code></p>
+
+<h3 class="relative group">Steganography 
+    <div id="steganography" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#steganography" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+<h4 class="relative group">Simple stego 
+    <div id="simple-stego" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#simple-stego" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/simple_hu_bcea2e1067eb9e52.png  330w,
+      /writeups/udom/simple_hu_a00c55068af531c9.png  660w,
+      /writeups/udom/simple_hu_3f0d9e81c0cb2401.png 1280w
+    "
+    data-zoom-src="/writeups/udom/simple.png"
+    src="/writeups/udom/simple.png">
+
+  
+</figure>
+ 
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/winexp_hu_475e026688e1695c.png  330w,
+      /writeups/udom/winexp_hu_6fe3139b5931dc9b.png  660w,
+      /writeups/udom/winexp_hu_49aab0aeabcc3f85.png 1280w
+    "
+    data-zoom-src="/writeups/udom/winexp.png"
+    src="/writeups/udom/winexp.png">
+
+  
+</figure>
+
+This was very simple. If you zoom closely you&rsquo;ll notice the flag on the top left conner of the image. <code>UDOM{BR1LL14NT_5T4RT5_H3R3}</code></p>
+
+<h4 class="relative group">happy new year 
+    <div id="happy-new-year" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#happy-new-year" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/happy_hu_789eb9ea546eeb2a.png  330w,
+      /writeups/udom/happy_hu_edbdded451fb7f93.png  660w,
+      /writeups/udom/happy_hu_9f61b4c6322a1b9b.png 1280w
+    "
+    data-zoom-src="/writeups/udom/happy.png"
+    src="/writeups/udom/happy.png">
+
+  
+</figure>
+ 
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/STEGO_hu_b65afa6187b940e8.jpg  330w,
+      /writeups/udom/STEGO_hu_6a2d4594fbe99160.jpg  660w,
+      /writeups/udom/STEGO_hu_47592d93a2bb0cdf.jpg 1280w
+    "
+    data-zoom-src="/writeups/udom/STEGO.jpg"
+    src="/writeups/udom/STEGO.jpg">
+
+  
+</figure>
+
+With this i tried <strong>exiftool, stegsolve,..</strong>** but i didn&rsquo;t find anything. Finally i tried steghide and i found that it requires a password to extract embeded files. <strong>Stegseek</strong> is one of the steganography bruteforce tools that given a wordlist will try cracking the password.
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/stegseek_hu_3363464ba915d2be.png  330w,
+      /writeups/udom/stegseek_hu_79d3172c76f69069.png  660w,
+      /writeups/udom/stegseek_hu_81cd7a0940143d2e.png 1280w
+    "
+    data-zoom-src="/writeups/udom/stegseek.png"
+    src="/writeups/udom/stegseek.png">
+
+  
+</figure>
+.<br>
+Bingo!! We get our flag.</p>
+
+<h4 class="relative group">Data 1 
+    <div id="data-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#data-1" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/data2_hu_2d8c32420af14f6d.png  330w,
+      /writeups/udom/data2_hu_9a07be9e505ebec3.png  660w,
+      /writeups/udom/data2_hu_a2eb89494cc0d9ea.png 1280w
+    "
+    data-zoom-src="/writeups/udom/data2.png"
+    src="/writeups/udom/data2.png">
+
+  
+</figure>
+<br>
+This challenge was closely related to the <strong>data 1</strong> challenge but i could&rsquo;t decode the last part of the data 1 challenge &#x1f61e;</p>
+<blockquote>
+<p>50 4b 03 04 14 00 09 00 63 00 85 19 9f 55 00 00 00 00 00 00 00 00 3d 00 00 00 0e 00 2b 00 77 61 79 74 6f 66 6c 61 67 32 2e 74 78 74 55 54 0d 00 07 db ee af 63 db ee af 63 db ee af 63 75 78 0b 00 01 04 e8 03 00 00 04 e8 03 00 00 01 99 07 00 01 00 41 45 03 08 00 6a 74 e9 de 2c f5 76 1a 62 3c 55 06 c0 1c c2 23 ad 52 18 89 f1 97 65 60 fc 48 25 7c cd 24 bc 0a 22 27 d8 62 0e 12 58 ad aa 75 6b 6d 95 e3 e1 3d 54 ee 24 8e 78 e5 af 15 4c c5 5e 1b e9 84 cc cb c0 4e 24 d1 42 3d 23 33 c3 07 03 8d dc e7 19 83 25 2f ff e0 49 4d 58 f0 68 4d c3 50 4b 07 08 cd c5 bf 2a 5b 00 00 00 3d 00 00 00 50 4b 01 02 14 03 14 00 09 00 63 00 85 19 9f 55 cd c5 bf 2a 5b 00 00 00 3d 00 00 00 0e 00 2b 00 00 00 00 00 00 00 00 00 a4 81 00 00 00 00 77 61 79 74 6f 66 6c 61 67 32 2e 74 78 74 55 54 0d 00 07 db ee af 63 db ee af 63 db ee af 63 75 78 0b 00 01 04 e8 03 00 00 04 e8 03 00 00 01 99 07 00 01 00 41 45 03 08 00 50 4b 05 06 00 00 00 00 01 00 01 00 67 00 00 00 c2 00 00 00 00 00</p></blockquote>
+<p>This clearly looked like a hex dump. The magic byte <strong>50 4b</strong> represents a zip file. You can learn more about magic bytes here <a
+  href="https://en.wikipedia.org/wiki/List_of_file_signatures"
+    target="_blank"
+  >File signatures</a>. Linux has a command called <strong>xxd</strong> that can help creating or reversing hex dumps to an original file. Let&rsquo;s first copy the dump to a file names <strong>hexdump.txt</strong> then wit the <strong>-r</strong> option reverse the dump.
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/xxd_hu_9fb4b31203fd630b.png  330w,
+      /writeups/udom/xxd_hu_cca50bed281b0ad2.png  660w,
+      /writeups/udom/xxd_hu_60dcef748979fd8e.png 1280w
+    "
+    data-zoom-src="/writeups/udom/xxd.png"
+    src="/writeups/udom/xxd.png">
+
+  
+</figure>
+<br>
+We se that the file is a password protected zip file(it skips the unziping) containing a file named <strong>waytoflag2.txt</strong>. Some of the famous tool to crack a password protected zip file is a utilitiy called <strong>zip2john</strong> part of the <strong>John the Ripper</strong> tool and <strong>fcackzip</strong>. Let&rsquo;s use zip2john with the famous wordlist <strong>rockyou.txt</strong>
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/passzip_hu_9fe3b47f31af1b5d.png  330w,
+      /writeups/udom/passzip_hu_c9e74959a0a078e1.png  660w,
+      /writeups/udom/passzip_hu_6c09904ac82d7e8d.png 1280w
+    "
+    data-zoom-src="/writeups/udom/passzip.png"
+    src="/writeups/udom/passzip.png">
+
+  
+</figure>
+<br>
+<code>newyearnewfriends</code>
+I had already cracked the password. It wil take sometime. the contents of the waytoflag2file.txt were <code>&quot;RldMTntiMGYnaTNfbTBkX2dzM19uNDVndmlfMHVfeGlia2cwX2hnM3QwfQ==&quot;</code>. Sure! This looks like base64, let&rsquo;s have some fun!
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/atbash_hu_1f2479b0e931ab4d.png  330w,
+      /writeups/udom/atbash_hu_84c388ef4d4c4e54.png  660w,
+      /writeups/udom/atbash_hu_92c2f5cee7eba9a0.png 1280w
+    "
+    data-zoom-src="/writeups/udom/atbash.png"
+    src="/writeups/udom/atbash.png">
+
+  
+</figure>
+</p>
+<p>It&rsquo;s time to ask for help from our friend <a
+  href="https://www.dcode.fr/cipher-identifier"
+    target="_blank"
+  >cipher identifier</a>. A if we try the option we finally realize it was Atbash Cipher. And the flag is <code>UDOM{y0u'r3_n0w_th3_m45ter_0f_crypt0_st3g0}</code></p>
+
+<h3 class="relative group">Web 
+    <div id="web" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#web" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Lemme put this up-staight before we get to this part. &ldquo;I&rsquo;m not well versed in this category&rdquo;. I had to ask ChatGPT some help &#x1f602;</p>
+
+<h4 class="relative group">Turaco 
+    <div id="turaco" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#turaco" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/turaco_hu_d3221ba284be8f9a.png  330w,
+      /writeups/udom/turaco_hu_c8a2ddebfa309fe7.png  660w,
+      /writeups/udom/turaco_hu_a208523a79bfe68a.png 1280w
+    "
+    data-zoom-src="/writeups/udom/turaco.png"
+    src="/writeups/udom/turaco.png">
+
+  
+</figure>
+<br>
+The website had a password prompt and if you submit anything it returns the following.
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/pass_hu_32a04041d1171bc8.png  330w,
+      /writeups/udom/pass_hu_6f8375d2d5d1f48d.png  660w,
+      /writeups/udom/pass_hu_1c6a13882b689f89.png 1280w
+    "
+    data-zoom-src="/writeups/udom/pass.png"
+    src="/writeups/udom/pass.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/uongo_hu_62d94b01f127dce4.png  330w,
+      /writeups/udom/uongo_hu_dea169fec6c966bb.png  660w,
+      /writeups/udom/uongo_hu_d7d0d473dbd763f3.png 1280w
+    "
+    data-zoom-src="/writeups/udom/uongo.png"
+    src="/writeups/udom/uongo.png">
+
+  
+</figure>
+</p>
+<p>If we view the source code we see a javascript code.<br>
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/source_hu_d82ad2e4f129171d.png  330w,
+      /writeups/udom/source_hu_4b1c9a1d248071eb.png  660w,
+      /writeups/udom/source_hu_38d7d5d4c65d26d2.png 1280w
+    "
+    data-zoom-src="/writeups/udom/source.png"
+    src="/writeups/udom/source.png">
+
+  
+</figure>
+<br>
+The function takes a one argument and splits it based on the comma delimiter and strores it in variable <code>tab</code>. The function contains variable <code>pass</code> which is an array of ascii codes. <code>tab2</code> is contains the results of splitting pass on comma. The function then loops through the elements of tab2 and converts each one back to its corresponding character using String.fromCharCode(). It appends each character to the p string. The loop is stopped after the fifth iteration using break. The function then continues to loop through tab2, but this time only adds characters to p if the index of the character in the loop is greater than 5 and less than the length of tab2 minus 1. Finally, the function adds the character at index 17 of tab2 to p and assigns the resulting string to the pass variable, which is returned by the function.</p>
+<p>If you have realized, the function doesn&rsquo;t make use of this part of code <code>String\[&quot;fromCharCode&quot;\](sambo(&quot;\x38\x35\x2c\x36\x38\x2c\x37\x39\x2c\x37\x37\x2c\x31\x32\x33\x2c\x34\x39\x2c\x31\x31\x36\x2c\x31\x31\x35\x2c\x39\x35\x2c\x39\x37\x2c\x31\x31\x30\x2c\x39\x35\x2c\x34\x38\x2c\x31\x30\x39\x2c\x35\x31\x2c\x31\x31\x30\x2c\x31\x32\x35&quot;));</code> The hex character translate to these ascii codes <code>&quot;85, 68, 79, 77, 123, 49, 116, 115, 95, 97, 110, 95, 48, 109, 51, 110, 125&quot;</code>. decoding the ASCII back to text we get the flag <code>UDOM{1ts_an_0m3n}</code></p>
+
+<h3 class="relative group">Two-step-snake 
+    <div id="two-step-snake" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#two-step-snake" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/snake_hu_7b24c06d2268aa81.png  330w,
+      /writeups/udom/snake_hu_140d01ca9325526f.png  660w,
+      /writeups/udom/snake_hu_c6fa3145570e0c58.png 1280w
+    "
+    data-zoom-src="/writeups/udom/snake.png"
+    src="/writeups/udom/snake.png">
+
+  
+</figure>
+<br>
+This challenge had this in it&rsquo;s source code.
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/source2_hu_feedb72021c115e3.png  330w,
+      /writeups/udom/source2_hu_c69ad2c666c52245.png  660w,
+      /writeups/udom/source2_hu_4a2f0245f28c73d8.png 1280w
+    "
+    data-zoom-src="/writeups/udom/source2.png"
+    src="/writeups/udom/source2.png">
+
+  
+</figure>
+</p>
+<blockquote>
+<p>The unescape function is a JavaScript function that can be used to decode a string that has been encoded with the escape function. The escape function  URL encodes a string (by replacing certain characters with a percent sign followed by a two-digit hexadecimal code) eg space is encoded as %20.</p></blockquote>
+<p>The results of the uescape function will be <code>String.fromCharCode(104,68,117,102,106,100,107,105,49,53,54)</code>. Deccoding the ASCII code results to the following string <code>hDufjdki156</code> which was the password. The flag formart was <code>UDOM{hDufjdki156}</code></p>
+
+<h4 class="relative group">wRceb 
+    <div id="wrceb" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100 select-none">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href="#wrceb" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/web_hu_af399bcf490b0a1f.png  330w,
+      /writeups/udom/web_hu_7b9a339d085d43e8.png  660w,
+      /writeups/udom/web_hu_dfb4fa2d9cdd1a24.png 1280w
+    "
+    data-zoom-src="/writeups/udom/web.png"
+    src="/writeups/udom/web.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/mypage_hu_3d18283d33a2f8ce.png  330w,
+      /writeups/udom/mypage_hu_8c76705dfc8e93c9.png  660w,
+      /writeups/udom/mypage_hu_795349feb1cccfbc.png 1280w
+    "
+    data-zoom-src="/writeups/udom/mypage.png"
+    src="/writeups/udom/mypage.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/linktojs_hu_5ea37faf8c05a6cc.png  330w,
+      /writeups/udom/linktojs_hu_4a5b1fc16a00f866.png  660w,
+      /writeups/udom/linktojs_hu_748abf318c66b0a8.png 1280w
+    "
+    data-zoom-src="/writeups/udom/linktojs.png"
+    src="/writeups/udom/linktojs.png">
+
+  
+</figure>
+</p>
+<p>
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/js_hu_6bfce2730d356800.png  330w,
+      /writeups/udom/js_hu_19b23f4ea7338323.png  660w,
+      /writeups/udom/js_hu_b082b1ff5522df29.png 1280w
+    "
+    data-zoom-src="/writeups/udom/js.png"
+    src="/writeups/udom/js.png">
+
+  
+</figure>
+</p>
+<p>ChatGPT helped me understand the code.</p>
+<blockquote>
+<p>This looks like a Node.js route handler for an HTTP POST request that is listening for a /command path. When a request is received, it extracts the command field from the request body, and then passes it to the exec function. The exec function is part of the child_process module in Node.js, and it is used to execute shell commands. It takes a command as an argument and executes it in the system shell.
+The exec function has a callback that is called with three arguments: error, stdout, and stderr. error is an error object that is set if there is an error executing the command. stdout and stderr are strings that contain the output of the command written to standard output and standard error, respectively. If there is an error executing the command, the route handler sends an HTTP status code of 500 (Internal Server Error) and an object with the error message as the response. If the command is executed successfully, the route handler sends an object with the stdout and stderr as the response.</p></blockquote>
+<p>Now we know we need to send a <strong>POST</strong> request to this path <strong>/command</strong> with a JSON request body that includes a <strong>command</strong> field. I have issues with my burpsuite so we are going to use the <strong>CUrL</strong> tool to send the request. We first execute the <code>ls -la</code> command which outputs the contents of the current directory. We can see a <strong>flag.txt</strong> file. The <code>cat flag.txt</code> outputs the contents of the file.
+
+
+
+
+
+
+
+<figure>
+      <img
+    class="my-0 rounded-md"
+    loading="lazy"
+    decoding="async"
+    fetchpriority="low"
+    alt=""
+    srcset="
+      /writeups/udom/curl_hu_e717a244f5d069ad.png  330w,
+      /writeups/udom/curl_hu_771c793846de23cc.png  660w,
+      /writeups/udom/curl_hu_316034242da3fb73.png 1280w
+    "
+    data-zoom-src="/writeups/udom/curl.png"
+    src="/writeups/udom/curl.png">
+
+  
+</figure>
+</p>
+<p><code>UDOM{a_simpl3_code_Review3r}</code></p>
+<p>That&rsquo;s all for the first CTF of the Year buddies!! Hope you enjoyed ! See ya Next time &#x1f60a;</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_writeups/UDOM/index.md"
+          data-oid-likes="likes_writeups/UDOM/index.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+  
+    
+    
+    
+    <div class="pt-8">
+      <hr class="border-dotted border-neutral-300 dark:border-neutral-600">
+      <div class="flex justify-between pt-3">
+        <span>
+          
+            <a class="flex group mr-3" href="/writeups/shehacks/">
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span class="flex flex-col">
+                <span class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >SheHacks Intervasity CTF</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2023-09-23T00:00:00&#43;00:00">23 September 2023</time>
+                  
+                </span>
+              </span>
+            </a>
+          
+        </span>
+        <span>
+          
+        </span>
+      </div>
+    </div>
+  
+
+
+      
+    </footer>
+  </article>
+
+        <div id="top-scroller" class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0 z-10">
+  <a
+    href="#the-top"
+    class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 ltr:text-right rtl:text-left sm:mb-0 ltr:sm:mr-7 ltr:sm:last:mr-0 rtl:sm:ml-7 rtl:sm:last:ml-0 ltr:mr-4 rtl:ml-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          Peter Kinyumu
+      </p>
+    
+
+    
+    
+      <p class="text-xs text-neutral-500 dark:text-neutral-400">
+        
+        
+        Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a> &amp; <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500"
+          href="https://blowfish.page/" target="_blank" rel="noopener noreferrer">Blowfish</a>
+      </p>
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

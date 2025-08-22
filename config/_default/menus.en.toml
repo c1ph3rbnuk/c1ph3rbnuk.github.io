@@ -1,0 +1,26 @@
+[[main]]
+none = "none"
+
+[[main]]
+name = "Posts"
+pageRef = "/posts/"
+weight = 10 
+
+[[main]]
+name = "Projects"
+pageRef = "projects"
+weight = 10
+
+[[main]]
+name = "Writeups"
+pageRef = "writeups"
+weight = 20
+
+[[main]]
+name = "About"
+pageRef = "about"
+weight = 30
+
+
+[[footer]]
+none = "none"

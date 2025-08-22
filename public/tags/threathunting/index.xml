@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Threathunting on Deathstalker</title>
+    <link>http://localhost:1313/tags/threathunting/</link>
+    <description>Recent content in Threathunting on Deathstalker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Peter Kinyumu</copyright>
+    <lastBuildDate>Wed, 12 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/threathunting/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cybertalents Blue team Training</title>
+      <link>http://localhost:1313/posts/cybertalents/</link>
+      <pubDate>Wed, 12 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/cybertalents/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/cybertalents/feature.jpeg" />
+    </item>
+    
+  </channel>
+</rss>

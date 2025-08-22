@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Powershell on Deathstalker</title>
+    <link>http://localhost:1313/tags/powershell/</link>
+    <description>Recent content in Powershell on Deathstalker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Peter Kinyumu</copyright>
+    <atom:link href="http://localhost:1313/tags/powershell/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Powershell Pyaload Deobfuscation</title>
+      <link>http://localhost:1313/posts/powershell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/powershell/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

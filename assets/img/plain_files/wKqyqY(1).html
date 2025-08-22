@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://codepen.io/Ilyatsuprun/embed/wKqyqY -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width">
+
+  <title>CodePen Embed - Ambient Background</title>
+
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="SkFaIkn3NV6eHFabiThvNyqcxU8tA-7oeRzr201S0Ljnj_tun4Fpk3NAZefikRiKqCGH4VdEHIJ40H8Y257DKQ">
+
+  <link rel="stylesheet" href="./embed-50c8e30c86cf654903ac612e1633eecabbabaf25cd1efaeaee3733dd9834c822.css" media="all">
+
+  <style>
+    .hide {
+      display: none !important;
+    }
+    .embed-footer,
+    .embed-nav {
+      background: #3d3d3e;
+      
+    }
+    .embed-nav .code-types a,
+    .embed-nav .result-button-list a,
+    .action-button {
+      color: #ffffff;
+      background-color: #666666;
+    }
+    .embed-nav .code-types a.active,
+    .embed-nav .result-button-list a.active,
+    .action-button.active {
+      background: #888888;
+      color: #ffffff;
+      box-shadow: inset 0px 3px #dddddd;
+    }
+    .embed-nav .logo-wrap .edit-on-codepen {
+      color: #ffffff;
+    }
+
+    .embed-nav svg {
+      stroke: #ffffff !important;
+    }
+  </style>
+
+  <link rel="stylesheet" href="./twilight-5624f2aa0a9e5ad3c27da1db150d791e788247e197af02b4cd6db6fbc40f7354.css" media="all">
+
+</head>
+
+<body id="the-body" style="border: 1px solid #555555; --borderWidth: 1px;" class="codepen-embed-body static results-active" data-new-gr-c-s-check-loaded="14.1248.0" data-gr-ext-installed="">
+
+  <nav class="embed-nav group" id="embed-nav">
+
+  <ul class="code-types">
+
+
+        <li class="code-type">
+          <a id="html-link" href="https://codepen.io/Ilyatsuprun/embed/wKqyqY#html-box" role="button" aria-pressed="false">
+              HTML
+          </a>
+        </li>
+
+
+        <li class="code-type">
+          <a id="css-link" href="https://codepen.io/Ilyatsuprun/embed/wKqyqY#css-box" role="button" aria-pressed="false">
+              CSS
+          </a>
+        </li>
+
+
+        <li class="code-type">
+          <a id="js-link" href="https://codepen.io/Ilyatsuprun/embed/wKqyqY#js-box" role="button" aria-pressed="false">
+              JS
+          </a>
+        </li>
+
+
+  </ul>
+
+  <ul class="result-button-list">
+    <li class="results results-type">
+      <a id="result-link" href="https://codepen.io/Ilyatsuprun/embed/wKqyqY#result-box" class="active" aria-pressed="true" role="button">
+        Result
+      </a>
+    </li>
+    <li>
+      <a href="https://codepen.io/Ilyatsuprun/embed/wKqyqY#resources-link" id="skip-results-iframe-link">Skip Results Iframe</a>
+    </li>
+  </ul>
+
+
+    <div class="logo-wrap" id="edit-area">
+
+        <a class="edit-on-codepen" target="_blank" rel="noopener" href="https://codepen.io/mimikos/pen/wKqyqY" title="Edit on CodePen">
+            <div class="large-logo">
+    <span id="edit-on-text" class="open-on">EDIT ON</span>
+    <svg id="embed-codepen-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 26" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="CodePen">
+  <path d="M80 6h-9v14h9m34-14h-9v14h9m-3-7h-6m-28 0h-6m51 7V6l11 14V6M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24m55-10h6c2.2 0 4-1.8 4-4s-1.8-4-4-4h-6v14M15 8c-1.3-1.3-3-2-5-2-4 0-7 3-7 7s3 7 7 7c2 0 3.7-.8 5-2m49-5c0 4-3 7-7 7h-5V6h5c4 0 7 3 7 7z"></path>
+</svg>
+  </div>
+  <div class="box-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="20 0 26 26" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3" role="img" aria-label="Edit on CodePen">
+  <path id="icon-codepen-box" d="M22 16.7L33 24l11-7.3V9.3L33 2 22 9.3v7.4zm22 0L33 9.3l-11 7.4m0-7.4l11 7.3 11-7.3M33 2v7.3m0 7.4V24"></path>
+</svg>
+  </div>
+        </a>
+
+    
+    </div>
+
+
+</nav>
+
+
+  <div id="output" data-border-style="thin" data-header="true">
+
+
+
+        <div id="html-box" class="code-wrap code-box box " role="region" aria-label="HTML">
+
+
+          <pre tabindex="0"><code data-lang="htmlmixed" id="actual-html-code" class=" cm-s-default"> <span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">canvas</span> <span class="cm-attribute">id</span>=<span class="cm-string">"projector"</span><span class="cm-tag cm-bracket">&gt;</span>Your browser does not support the Canvas element.<span class="cm-tag cm-bracket">&lt;/</span><span class="cm-tag">canvas</span><span class="cm-tag cm-bracket">&gt;</span></code></pre>
+
+        </div>
+
+
+
+        <div id="css-box" class="code-wrap code-box box " role="region" aria-label="CSS">
+
+
+          <pre tabindex="0"><code data-lang="css" id="actual-css-code" class=" cm-s-default"><span class="cm-tag">html</span>, <span class="cm-tag">body</span>{
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>; 
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>; 
+  <span class="cm-property">padding</span>:<span class="cm-number">0px</span>; 
+  <span class="cm-property">margin</span>:<span class="cm-number">0px</span>;
+  <span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;
+  <span class="cm-property">background</span>: <span class="cm-atom">#191d1e</span>; <span class="cm-comment">/* Old browsers */</span>
+  <span class="cm-property">background</span>: <span class="cm-meta">-moz-</span><span class="cm-variable cm-callee">linear-gradient</span>(<span class="cm-number">0deg</span>,  <span class="cm-atom">#191d1e</span> <span class="cm-number">50%</span>, <span class="cm-atom">#283139</span> <span class="cm-number">100%</span>); <span class="cm-comment">/* FF3.6+ */</span>
+  <span class="cm-property">background</span>: <span class="cm-meta">-webkit-</span><span class="cm-variable cm-callee">gradient</span>(<span class="cm-atom">linear</span>, <span class="cm-atom">left</span> <span class="cm-atom">top</span>, <span class="cm-atom">right</span> <span class="cm-atom">bottom</span>, <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">50%</span>,<span class="cm-atom">#191d1e</span>), <span class="cm-variable cm-callee">color-stop</span>(<span class="cm-number">100%</span>,<span class="cm-atom">#283139</span>)); <span class="cm-comment">/* Chrome,Safari4+ */</span>
+  <span class="cm-property">background</span>: <span class="cm-meta">-webkit-</span><span class="cm-variable cm-callee">linear-gradient</span>(<span class="cm-number">0deg</span>,  <span class="cm-atom">#191d1e</span> <span class="cm-number">50%</span>,<span class="cm-atom">#283139</span> <span class="cm-number">100%</span>); <span class="cm-comment">/* Chrome10+,Safari5.1+ */</span>
+  <span class="cm-property">background</span>: <span class="cm-meta">-o-</span><span class="cm-variable cm-callee">linear-gradient</span>(<span class="cm-number">0deg</span>,  <span class="cm-atom">#191d1e</span> <span class="cm-number">50%</span>,<span class="cm-atom">#283139</span> <span class="cm-number">100%</span>); <span class="cm-comment">/* Opera 11.10+ */</span>
+  <span class="cm-property">background</span>: <span class="cm-meta">-ms-</span><span class="cm-variable cm-callee">linear-gradient</span>(<span class="cm-number">0deg</span>,  <span class="cm-atom">#191d1e</span> <span class="cm-number">50%</span>,<span class="cm-atom">#283139</span> <span class="cm-number">100%</span>); <span class="cm-comment">/* IE10+ */</span>
+  <span class="cm-property">background</span>: <span class="cm-variable cm-callee">linear-gradient</span>(<span class="cm-number">0deg</span>,  <span class="cm-atom">#191d1e</span> <span class="cm-number">50%</span>,<span class="cm-atom">#283139</span> <span class="cm-number">100%</span>); <span class="cm-comment">/* W3C */</span>
+  <span class="cm-property">filter</span>: <span class="cm-variable">progid</span>:<span class="cm-variable cm-callee">DXImageTransform.Microsoft.gradient</span>( <span class="cm-variable">startColorstr</span>=<span class="cm-string">'#191d1e'</span>, <span class="cm-variable">endColorstr</span>=<span class="cm-string">'#283139'</span>,<span class="cm-variable">GradientType</span>=<span class="cm-number">1</span> ); <span class="cm-comment">/* IE6-9 fallback on horizontal gradient */</span>
+  <span class="cm-property">background-attachment</span>: <span class="cm-atom">fixed</span>
+}
+
+<span class="cm-builtin">#projector</span> {
+  <span class="cm-property">position</span>: <span class="cm-atom">absolute</span>; 
+  <span class="cm-property">top</span>: <span class="cm-number">0px</span>;
+  <span class="cm-property">left</span>: <span class="cm-number">0px</span>;
+  <span class="cm-property">width</span>:<span class="cm-number">100%</span>;
+  <span class="cm-property">height</span>:<span class="cm-number">100%</span>;
+} 
+
+<span class="cm-qualifier">.center-div</span> {
+  <span class="cm-property">width</span>:<span class="cm-number">580px</span>;
+    <span class="cm-property">height</span>:<span class="cm-number">374px</span>;
+    <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+    <span class="cm-property">left</span>:<span class="cm-number">50%</span>;
+    <span class="cm-property">top</span>:<span class="cm-number">50%</span>;
+    <span class="cm-property">margin-left</span>: <span class="cm-number">-290px</span>;
+    <span class="cm-property">margin-top</span>:  <span class="cm-number">-187px</span>;
+}
+
+<span class="cm-builtin">#preloaderDiv</span>
+{
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">left</span>:<span class="cm-number">50%</span>;
+    <span class="cm-property">top</span>:<span class="cm-number">50%</span>;
+    <span class="cm-property">margin-left</span>: <span class="cm-number">-27px</span>;
+    <span class="cm-property">margin-top</span>:  <span class="cm-number">-27px</span>;
+}
+
+<span class="cm-builtin">#logo</span>{
+  <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">filter</span>: <span class="cm-variable cm-callee">alpha</span>(<span class="cm-atom">opacity</span>=<span class="cm-number">0</span>);
+}
+
+<span class="cm-builtin">#date2014</span>
+{
+  <span class="cm-property">position</span>:<span class="cm-atom">absolute</span>;
+  <span class="cm-property">padding-left</span>: <span class="cm-number">210px</span>;
+  <span class="cm-property">padding-top</span>:<span class="cm-number">15px</span>;
+  <span class="cm-property">opacity</span>:<span class="cm-number">0</span>;
+  <span class="cm-property">top</span>:<span class="cm-number">303px</span>;
+  <span class="cm-property">left</span>:<span class="cm-number">0</span>;
+    <span class="cm-property">filter</span>: <span class="cm-variable cm-callee">alpha</span>(<span class="cm-atom">opacity</span>=<span class="cm-number">0</span>);
+}</code></pre>
+
+        </div>
+
+
+
+        <div id="js-box" class="code-wrap code-box box " role="region" aria-label="JS">
+
+
+          <pre tabindex="0"><code data-lang="javascript" id="actual-js-code" class=" cm-s-default"><span class="cm-comment">////////////////////////// PARTICLE ENGINE ////////////////////////////////////////</span>
+<span class="cm-comment">/////////////////////////////////////////////////////////////////////////////////////////</span>
+
+<span class="cm-keyword">var</span> <span class="cm-def">ParticleEngine</span> <span class="cm-operator">=</span> (<span class="cm-keyword">function</span>() {
+  <span class="cm-string">'use strict'</span>;
+
+  <span class="cm-keyword">function</span> <span class="cm-def">ParticleEngine</span>(<span class="cm-def">canvas_id</span>) {
+    <span class="cm-comment">// enforces new</span>
+    <span class="cm-keyword">if</span> (<span class="cm-operator">!</span>(<span class="cm-keyword">this</span> <span class="cm-keyword">instanceof</span> <span class="cm-variable-2">ParticleEngine</span>)) {
+      <span class="cm-keyword">return</span> <span class="cm-keyword">new</span> <span class="cm-variable-2">ParticleEngine</span>(<span class="cm-variable">args</span>);
+    }
+    
+    <span class="cm-keyword">var</span> <span class="cm-def">_ParticleEngine</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>;
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">canvas_id</span> <span class="cm-operator">=</span> <span class="cm-variable-2">canvas_id</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">stage</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">createjs</span>.<span class="cm-property">Stage</span>(<span class="cm-variable-2">canvas_id</span>);
+    <span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">canvasWidth</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-variable-2">canvas_id</span>).<span class="cm-property">width</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-variable-2">canvas_id</span>).<span class="cm-property">offsetWidth</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">totalHeight</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">canvasHeight</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-variable-2">canvas_id</span>).<span class="cm-property">height</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-variable-2">canvas_id</span>).<span class="cm-property">offsetHeight</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">compositeStyle</span> <span class="cm-operator">=</span> <span class="cm-string">"lighter"</span>;
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">particleSettings</span> <span class="cm-operator">=</span> [{<span class="cm-property">id</span>:<span class="cm-string">"small"</span>, <span class="cm-property">num</span>:<span class="cm-number">300</span>, <span class="cm-property">fromX</span>:<span class="cm-number">0</span>, <span class="cm-property">toX</span>:<span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span>, <span class="cm-property">ballwidth</span>:<span class="cm-number">3</span>, <span class="cm-property">alphamax</span>:<span class="cm-number">0.4</span>, <span class="cm-property">areaHeight</span>:<span class="cm-number">.5</span>, <span class="cm-property">color</span>:<span class="cm-string">"#0cdbf3"</span>, <span class="cm-property">fill</span>:<span class="cm-atom">false</span>}, 
+                {<span class="cm-property">id</span>:<span class="cm-string">"medium"</span>, <span class="cm-property">num</span>:<span class="cm-number">100</span>, <span class="cm-property">fromX</span>:<span class="cm-number">0</span>, <span class="cm-property">toX</span>:<span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span>,  <span class="cm-property">ballwidth</span>:<span class="cm-number">8</span>, <span class="cm-property">alphamax</span>:<span class="cm-number">0.3</span>, <span class="cm-property">areaHeight</span>:<span class="cm-number">1</span>, <span class="cm-property">color</span>:<span class="cm-string">"#6fd2f3"</span>, <span class="cm-property">fill</span>:<span class="cm-atom">true</span>}, 
+                {<span class="cm-property">id</span>:<span class="cm-string">"large"</span>, <span class="cm-property">num</span>:<span class="cm-number">10</span>, <span class="cm-property">fromX</span>:<span class="cm-number">0</span>, <span class="cm-property">toX</span>:<span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span>, <span class="cm-property">ballwidth</span>:<span class="cm-number">30</span>,  <span class="cm-property">alphamax</span>:<span class="cm-number">0.2</span>, <span class="cm-property">areaHeight</span>:<span class="cm-number">1</span>, <span class="cm-property">color</span>:<span class="cm-string">"#93e9f3"</span>, <span class="cm-property">fill</span>:<span class="cm-atom">true</span>}];
+    <span class="cm-keyword">this</span>.<span class="cm-property">particleArray</span> <span class="cm-operator">=</span> [];
+    <span class="cm-keyword">this</span>.<span class="cm-property">lights</span> <span class="cm-operator">=</span> [{<span class="cm-property">ellipseWidth</span>:<span class="cm-number">400</span>, <span class="cm-property">ellipseHeight</span>:<span class="cm-number">100</span>, <span class="cm-property">alpha</span>:<span class="cm-number">0.6</span>, <span class="cm-property">offsetX</span>:<span class="cm-number">0</span>, <span class="cm-property">offsetY</span>:<span class="cm-number">0</span>, <span class="cm-property">color</span>:<span class="cm-string">"#6ac6e8"</span>}, 
+            {<span class="cm-property">ellipseWidth</span>:<span class="cm-number">350</span>, <span class="cm-property">ellipseHeight</span>:<span class="cm-number">250</span>, <span class="cm-property">alpha</span>:<span class="cm-number">0.3</span>, <span class="cm-property">offsetX</span>:<span class="cm-operator">-</span><span class="cm-number">50</span>, <span class="cm-property">offsetY</span>:<span class="cm-number">0</span>, <span class="cm-property">color</span>:<span class="cm-string">"#54d5e8"</span>}, 
+            {<span class="cm-property">ellipseWidth</span>:<span class="cm-number">100</span>, <span class="cm-property">ellipseHeight</span>:<span class="cm-number">80</span>, <span class="cm-property">alpha</span>:<span class="cm-number">0.2</span>, <span class="cm-property">offsetX</span>:<span class="cm-number">80</span>, <span class="cm-property">offsetY</span>:<span class="cm-operator">-</span><span class="cm-number">50</span>, <span class="cm-property">color</span>:<span class="cm-string">"#2ae8d8"</span>}];
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">stage</span>.<span class="cm-property">compositeOperation</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">compositeStyle</span>;
+
+
+    <span class="cm-keyword">function</span> <span class="cm-def">drawBgLight</span>()
+    {
+      <span class="cm-keyword">var</span> <span class="cm-def">light</span>;
+      <span class="cm-keyword">var</span> <span class="cm-def">bounds</span>;
+      <span class="cm-keyword">var</span> <span class="cm-def">blurFilter</span>;
+      <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>, <span class="cm-def">len</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">len</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {        
+        <span class="cm-variable-2">light</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">createjs</span>.<span class="cm-property">Shape</span>();
+        <span class="cm-variable-2">light</span>.<span class="cm-property">graphics</span>.<span class="cm-property">beginFill</span>(<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">color</span>).<span class="cm-property">drawEllipse</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseWidth</span>, <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseHeight</span>);
+        <span class="cm-variable-2">light</span>.<span class="cm-property">regX</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span>;
+        <span class="cm-variable-2">light</span>.<span class="cm-property">regY</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span>; 
+        <span class="cm-variable-2">light</span>.<span class="cm-property">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">light</span>.<span class="cm-property">initY</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">offsetY</span>;
+        <span class="cm-variable-2">light</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-variable-2">light</span>.<span class="cm-property">initX</span> <span class="cm-operator">=</span><span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">offsetX</span>;
+
+        <span class="cm-variable-2">blurFilter</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">createjs</span>.<span class="cm-property">BlurFilter</span>(<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseWidth</span>, <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseHeight</span>, <span class="cm-number">1</span>);
+        <span class="cm-variable-2">bounds</span> <span class="cm-operator">=</span> <span class="cm-variable-2">blurFilter</span>.<span class="cm-property">getBounds</span>();
+        <span class="cm-variable-2">light</span>.<span class="cm-property">filters</span> <span class="cm-operator">=</span> [<span class="cm-variable-2">blurFilter</span>];
+        <span class="cm-variable-2">light</span>.<span class="cm-property">cache</span>(<span class="cm-variable-2">bounds</span>.<span class="cm-property">x</span><span class="cm-operator">-</span><span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span>, <span class="cm-variable-2">bounds</span>.<span class="cm-property">y</span><span class="cm-operator">-</span><span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">ellipseHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span>, <span class="cm-variable-2">bounds</span>.<span class="cm-property">width</span><span class="cm-operator">*</span><span class="cm-number">2</span>, <span class="cm-variable-2">bounds</span>.<span class="cm-property">height</span><span class="cm-operator">*</span><span class="cm-number">2</span>);
+        <span class="cm-variable-2">light</span>.<span class="cm-property">alpha</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">alpha</span>;
+
+        <span class="cm-variable-2">light</span>.<span class="cm-property">compositeOperation</span> <span class="cm-operator">=</span> <span class="cm-string">"screen"</span>;
+        <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">stage</span>.<span class="cm-property">addChildAt</span>(<span class="cm-variable-2">light</span>, <span class="cm-number">0</span>);
+
+        <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">elem</span> <span class="cm-operator">=</span> <span class="cm-variable-2">light</span>;
+      }
+
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">fromTo</span>(<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">0</span>].<span class="cm-property">elem</span>, <span class="cm-number">10</span>, {<span class="cm-property">scaleX</span>:<span class="cm-number">1.5</span>, <span class="cm-property">x</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">0</span>].<span class="cm-property">elem</span>.<span class="cm-property">initX</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">0</span>].<span class="cm-property">elem</span>.<span class="cm-property">initY</span>},{<span class="cm-property">yoyo</span>:<span class="cm-atom">true</span>, <span class="cm-property">repeat</span>:<span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-property">ease</span>:<span class="cm-variable">Power1</span>.<span class="cm-property">easeInOut</span>, <span class="cm-property">scaleX</span>:<span class="cm-number">2</span>, <span class="cm-property">scaleY</span>:<span class="cm-number">0.7</span>});
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">fromTo</span>(<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">1</span>].<span class="cm-property">elem</span>, <span class="cm-number">12</span>, { <span class="cm-property">x</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">1</span>].<span class="cm-property">elem</span>.<span class="cm-property">initX</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">1</span>].<span class="cm-property">elem</span>.<span class="cm-property">initY</span>},{<span class="cm-property">delay</span>:<span class="cm-number">5</span>, <span class="cm-property">yoyo</span>:<span class="cm-atom">true</span>, <span class="cm-property">repeat</span>:<span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-property">ease</span>:<span class="cm-variable">Power1</span>.<span class="cm-property">easeInOut</span>, <span class="cm-property">scaleY</span>:<span class="cm-number">2</span>, <span class="cm-property">scaleX</span>:<span class="cm-number">2</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span><span class="cm-operator">-</span><span class="cm-number">50</span>, <span class="cm-property">x</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span><span class="cm-operator">+</span><span class="cm-number">100</span>});
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">fromTo</span>(<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">2</span>].<span class="cm-property">elem</span>, <span class="cm-number">8</span>, { <span class="cm-property">x</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">2</span>].<span class="cm-property">elem</span>.<span class="cm-property">initX</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">lights</span>[<span class="cm-number">2</span>].<span class="cm-property">elem</span>.<span class="cm-property">initY</span>},{<span class="cm-property">delay</span>:<span class="cm-number">2</span>, <span class="cm-property">yoyo</span>:<span class="cm-atom">true</span>, <span class="cm-property">repeat</span>:<span class="cm-operator">-</span><span class="cm-number">1</span>, <span class="cm-property">ease</span>:<span class="cm-variable">Power1</span>.<span class="cm-property">easeInOut</span>, <span class="cm-property">scaleY</span>:<span class="cm-number">1.5</span>, <span class="cm-property">scaleX</span>:<span class="cm-number">1.5</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span>, <span class="cm-property">x</span>:<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span><span class="cm-operator">-</span><span class="cm-number">200</span>});
+    }
+    
+    <span class="cm-keyword">var</span> <span class="cm-def">blurFilter</span>;
+    <span class="cm-keyword">function</span> <span class="cm-def">drawParticles</span>(){
+
+      <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">i</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>, <span class="cm-def">len</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">particleSettings</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">len</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>) {
+        <span class="cm-keyword">var</span> <span class="cm-def">ball</span> <span class="cm-operator">=</span> <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">particleSettings</span>[<span class="cm-variable-2">i</span>];
+
+        <span class="cm-keyword">var</span> <span class="cm-def">circle</span>;
+        <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">s</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; <span class="cm-variable-2">s</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">num</span>; <span class="cm-variable-2">s</span><span class="cm-operator">++</span> )
+        {
+          <span class="cm-variable-2">circle</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">createjs</span>.<span class="cm-property">Shape</span>();
+          <span class="cm-keyword">if</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">fill</span>){
+            <span class="cm-variable-2">circle</span>.<span class="cm-property">graphics</span>.<span class="cm-property">beginFill</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">color</span>).<span class="cm-property">drawCircle</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span>);
+            <span class="cm-variable-2">blurFilter</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">createjs</span>.<span class="cm-property">BlurFilter</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span><span class="cm-operator">/</span><span class="cm-number">2</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span><span class="cm-operator">/</span><span class="cm-number">2</span>, <span class="cm-number">1</span>);
+            <span class="cm-variable-2">circle</span>.<span class="cm-property">filters</span> <span class="cm-operator">=</span> [<span class="cm-variable-2">blurFilter</span>];
+            <span class="cm-keyword">var</span> <span class="cm-def">bounds</span> <span class="cm-operator">=</span> <span class="cm-variable-2">blurFilter</span>.<span class="cm-property">getBounds</span>();
+            <span class="cm-variable-2">circle</span>.<span class="cm-property">cache</span>(<span class="cm-operator">-</span><span class="cm-number">50</span><span class="cm-operator">+</span><span class="cm-variable-2">bounds</span>.<span class="cm-property">x</span>, <span class="cm-operator">-</span><span class="cm-number">50</span><span class="cm-operator">+</span><span class="cm-variable-2">bounds</span>.<span class="cm-property">y</span>, <span class="cm-number">100</span><span class="cm-operator">+</span><span class="cm-variable-2">bounds</span>.<span class="cm-property">width</span>, <span class="cm-number">100</span><span class="cm-operator">+</span><span class="cm-variable-2">bounds</span>.<span class="cm-property">height</span>);
+          }<span class="cm-keyword">else</span>{
+            <span class="cm-variable-2">circle</span>.<span class="cm-property">graphics</span>.<span class="cm-property">beginStroke</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">color</span>).<span class="cm-property">setStrokeStyle</span>(<span class="cm-number">1</span>).<span class="cm-property">drawCircle</span>(<span class="cm-number">0</span>, <span class="cm-number">0</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span>);
+          }
+          
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">alpha</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">0</span>, <span class="cm-number">0.1</span>);
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">alphaMax</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">alphamax</span>;
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">distance</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span> <span class="cm-operator">*</span> <span class="cm-number">2</span>;
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">ballwidth</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">ballwidth</span>;
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">flag</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">id</span>;
+          <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">applySettings</span>(<span class="cm-variable-2">circle</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">fromX</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">toX</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">areaHeight</span>);
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">speed</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">2</span>, <span class="cm-number">10</span>);
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">y</span> <span class="cm-operator">=</span> <span class="cm-variable-2">circle</span>.<span class="cm-property">initY</span>;
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-variable-2">circle</span>.<span class="cm-property">initX</span>;
+          <span class="cm-variable-2">circle</span>.<span class="cm-property">scaleX</span> <span class="cm-operator">=</span> <span class="cm-variable-2">circle</span>.<span class="cm-property">scaleY</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">0.3</span>, <span class="cm-number">1</span>);
+
+          <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">stage</span>.<span class="cm-property">addChild</span>(<span class="cm-variable-2">circle</span>);
+          
+
+          <span class="cm-variable">animateBall</span>(<span class="cm-variable-2">circle</span>);
+
+          <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">particleArray</span>.<span class="cm-property">push</span>(<span class="cm-variable-2">circle</span>);
+        }
+      } 
+    }
+
+    <span class="cm-keyword">this</span>.<span class="cm-property">applySettings</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>(<span class="cm-def">circle</span>, <span class="cm-def">positionX</span>, <span class="cm-def">totalWidth</span>, <span class="cm-def">areaHeight</span>)
+    {
+      <span class="cm-variable-2">circle</span>.<span class="cm-property">speed</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">1</span>, <span class="cm-number">3</span>);
+      <span class="cm-variable-2">circle</span>.<span class="cm-property">initY</span> <span class="cm-operator">=</span> <span class="cm-variable">weightedRange</span>(<span class="cm-number">0</span>, <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span> , <span class="cm-number">1</span>, [<span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span> <span class="cm-operator">*</span> (<span class="cm-number">2</span><span class="cm-operator">-</span><span class="cm-variable-2">areaHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span>)<span class="cm-operator">/</span><span class="cm-number">4</span>, <span class="cm-variable-2">_ParticleEngine</span>.<span class="cm-property">totalHeight</span><span class="cm-operator">*</span>(<span class="cm-number">2</span><span class="cm-operator">+</span><span class="cm-variable-2">areaHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span>)<span class="cm-operator">/</span><span class="cm-number">4</span>], <span class="cm-number">0.8</span> );
+      <span class="cm-variable-2">circle</span>.<span class="cm-property">initX</span> <span class="cm-operator">=</span> <span class="cm-variable">weightedRange</span>(<span class="cm-variable-2">positionX</span>, <span class="cm-variable-2">totalWidth</span>, <span class="cm-number">1</span>, [<span class="cm-variable-2">positionX</span><span class="cm-operator">+</span> ((<span class="cm-variable-2">totalWidth</span><span class="cm-operator">-</span><span class="cm-variable-2">positionX</span>))<span class="cm-operator">/</span><span class="cm-number">4</span>, <span class="cm-variable-2">positionX</span><span class="cm-operator">+</span> ((<span class="cm-variable-2">totalWidth</span><span class="cm-operator">-</span><span class="cm-variable-2">positionX</span>)) <span class="cm-operator">*</span> <span class="cm-number">3</span><span class="cm-operator">/</span><span class="cm-number">4</span>], <span class="cm-number">0.6</span>);
+    }
+
+    <span class="cm-keyword">function</span> <span class="cm-def">animateBall</span>(<span class="cm-def">ball</span>)
+    {
+      <span class="cm-keyword">var</span> <span class="cm-def">scale</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">0.3</span>, <span class="cm-number">1</span>);
+      <span class="cm-keyword">var</span> <span class="cm-def">xpos</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">initX</span> <span class="cm-operator">-</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">distance</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">initX</span> <span class="cm-operator">+</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">distance</span>);
+      <span class="cm-keyword">var</span> <span class="cm-def">ypos</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-variable-2">ball</span>.<span class="cm-property">initY</span> <span class="cm-operator">-</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">distance</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">initY</span> <span class="cm-operator">+</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">distance</span>);
+      <span class="cm-keyword">var</span> <span class="cm-def">speed</span> <span class="cm-operator">=</span> <span class="cm-variable-2">ball</span>.<span class="cm-property">speed</span>;
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">to</span>(<span class="cm-variable-2">ball</span>, <span class="cm-variable-2">speed</span>, {<span class="cm-property">scaleX</span>:<span class="cm-variable-2">scale</span>, <span class="cm-property">scaleY</span>:<span class="cm-variable-2">scale</span>, <span class="cm-property">x</span>:<span class="cm-variable-2">xpos</span>, <span class="cm-property">y</span>:<span class="cm-variable-2">ypos</span>, <span class="cm-property">onComplete</span>:<span class="cm-variable-2">animateBall</span>, <span class="cm-property">onCompleteParams</span>:[<span class="cm-variable-2">ball</span>], <span class="cm-property">ease</span>:<span class="cm-variable">Cubic</span>.<span class="cm-property">easeInOut</span>});  
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">to</span>(<span class="cm-variable-2">ball</span>, <span class="cm-variable-2">speed</span><span class="cm-operator">/</span><span class="cm-number">2</span>, {<span class="cm-property">alpha</span>:<span class="cm-variable">range</span>(<span class="cm-number">0.1</span>, <span class="cm-variable-2">ball</span>.<span class="cm-property">alphaMax</span>), <span class="cm-property">onComplete</span>:<span class="cm-variable">fadeout</span>, <span class="cm-property">onCompleteParams</span>:[<span class="cm-variable-2">ball</span>, <span class="cm-variable-2">speed</span>]});  
+    } 
+
+    <span class="cm-keyword">function</span> <span class="cm-def">fadeout</span>(<span class="cm-def">ball</span>, <span class="cm-def">speed</span>)
+    {
+      <span class="cm-variable-2">ball</span>.<span class="cm-property">speed</span> <span class="cm-operator">=</span> <span class="cm-variable">range</span>(<span class="cm-number">2</span>, <span class="cm-number">10</span>);
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">to</span>(<span class="cm-variable-2">ball</span>, <span class="cm-variable-2">speed</span><span class="cm-operator">/</span><span class="cm-number">2</span>, {<span class="cm-property">alpha</span>:<span class="cm-number">0</span> });
+    }
+
+    <span class="cm-variable-2">drawBgLight</span>();
+    <span class="cm-variable-2">drawParticles</span>();
+  }
+
+  <span class="cm-variable-2">ParticleEngine</span>.<span class="cm-property">prototype</span>.<span class="cm-property">render</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>()
+  {
+    <span class="cm-keyword">this</span>.<span class="cm-property">stage</span>.<span class="cm-property">update</span>();
+  }
+
+  <span class="cm-variable-2">ParticleEngine</span>.<span class="cm-property">prototype</span>.<span class="cm-property">resize</span> <span class="cm-operator">=</span> <span class="cm-keyword">function</span>()
+  {
+    <span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">canvasWidth</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-keyword">this</span>.<span class="cm-property">canvas_id</span>).<span class="cm-property">width</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-keyword">this</span>.<span class="cm-property">canvas_id</span>).<span class="cm-property">offsetWidth</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">totalHeight</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">canvasHeight</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-keyword">this</span>.<span class="cm-property">canvas_id</span>).<span class="cm-property">height</span> <span class="cm-operator">=</span> <span class="cm-variable">document</span>.<span class="cm-property">getElementById</span>(<span class="cm-keyword">this</span>.<span class="cm-property">canvas_id</span>).<span class="cm-property">offsetHeight</span>;
+    <span class="cm-keyword">this</span>.<span class="cm-property">render</span>();
+
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">i</span><span class="cm-operator">=</span> <span class="cm-number">0</span>, <span class="cm-def">length</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">particleArray</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">i</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">length</span>; <span class="cm-variable-2">i</span><span class="cm-operator">++</span>)
+    {
+      <span class="cm-keyword">this</span>.<span class="cm-property">applySettings</span>(<span class="cm-keyword">this</span>.<span class="cm-property">particleArray</span>[<span class="cm-variable-2">i</span>], <span class="cm-number">0</span>, <span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span>, <span class="cm-keyword">this</span>.<span class="cm-property">particleArray</span>[<span class="cm-variable-2">i</span>].<span class="cm-property">areaHeight</span>);
+    }
+
+    <span class="cm-keyword">for</span> (<span class="cm-keyword">var</span> <span class="cm-def">j</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>, <span class="cm-def">len</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">lights</span>.<span class="cm-property">length</span>; <span class="cm-variable-2">j</span> <span class="cm-operator">&lt;</span> <span class="cm-variable-2">len</span>; <span class="cm-variable-2">j</span><span class="cm-operator">++</span>) {
+      <span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">elem</span>.<span class="cm-property">initY</span> <span class="cm-operator">=</span> <span class="cm-keyword">this</span>.<span class="cm-property">totalHeight</span><span class="cm-operator">/</span><span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">offsetY</span>;
+      <span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">elem</span>.<span class="cm-property">initX</span> <span class="cm-operator">=</span><span class="cm-keyword">this</span>.<span class="cm-property">totalWidth</span><span class="cm-operator">/</span><span class="cm-number">2</span> <span class="cm-operator">+</span> <span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">offsetX</span>;
+      <span class="cm-variable">TweenMax</span>.<span class="cm-property">to</span>(<span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">elem</span>, <span class="cm-number">.5</span>, {<span class="cm-property">x</span>:<span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">elem</span>.<span class="cm-property">initX</span>, <span class="cm-property">y</span>:<span class="cm-keyword">this</span>.<span class="cm-property">lights</span>[<span class="cm-variable-2">j</span>].<span class="cm-property">elem</span>.<span class="cm-property">initY</span>});     
+    }
+  }
+
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">ParticleEngine</span>;
+
+}());
+
+
+<span class="cm-comment">////////////////////////UTILS//////////////////////////////////////</span>
+<span class="cm-comment">//////////////////////////////////////////////////////////////////</span>
+
+<span class="cm-keyword">function</span> <span class="cm-def">range</span>(<span class="cm-def">min</span>, <span class="cm-def">max</span>)
+{
+  <span class="cm-keyword">return</span> <span class="cm-variable-2">min</span> <span class="cm-operator">+</span> (<span class="cm-variable-2">max</span> <span class="cm-operator">-</span> <span class="cm-variable-2">min</span>) <span class="cm-operator">*</span> <span class="cm-variable">Math</span>.<span class="cm-property">random</span>();
+}
+    
+<span class="cm-keyword">function</span> <span class="cm-def">round</span>(<span class="cm-def">num</span>, <span class="cm-def">precision</span>)
+{
+   <span class="cm-keyword">var</span> <span class="cm-def">decimal</span> <span class="cm-operator">=</span> <span class="cm-variable">Math</span>.<span class="cm-property">pow</span>(<span class="cm-number">10</span>, <span class="cm-variable-2">precision</span>);
+   <span class="cm-keyword">return</span> <span class="cm-variable">Math</span>.<span class="cm-property">round</span>(<span class="cm-variable-2">decimal</span><span class="cm-operator">*</span> <span class="cm-variable-2">num</span>) <span class="cm-operator">/</span> <span class="cm-variable-2">decimal</span>;
+}
+
+<span class="cm-keyword">function</span> <span class="cm-def">weightedRange</span>(<span class="cm-def">to</span>, <span class="cm-def">from</span>, <span class="cm-def">decimalPlaces</span>, <span class="cm-def">weightedRange</span>, <span class="cm-def">weightStrength</span>)
+{
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">from</span> <span class="cm-operator">===</span> <span class="cm-string">"undefined"</span> <span class="cm-operator">||</span> <span class="cm-variable-2">from</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span>) { 
+      <span class="cm-variable-2">from</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; 
+  }
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">decimalPlaces</span> <span class="cm-operator">===</span> <span class="cm-string">"undefined"</span> <span class="cm-operator">||</span> <span class="cm-variable-2">decimalPlaces</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span>) { 
+      <span class="cm-variable-2">decimalPlaces</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; 
+  }
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">weightedRange</span> <span class="cm-operator">===</span> <span class="cm-string">"undefined"</span> <span class="cm-operator">||</span> <span class="cm-variable-2">weightedRange</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span>) { 
+      <span class="cm-variable-2">weightedRange</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; 
+  }
+  <span class="cm-keyword">if</span> (<span class="cm-keyword">typeof</span> <span class="cm-variable-2">weightStrength</span> <span class="cm-operator">===</span> <span class="cm-string">"undefined"</span> <span class="cm-operator">||</span> <span class="cm-variable-2">weightStrength</span> <span class="cm-operator">===</span> <span class="cm-atom">null</span>) { 
+      <span class="cm-variable-2">weightStrength</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>; 
+  }
+
+   <span class="cm-keyword">var</span> <span class="cm-def">ret</span>
+   <span class="cm-keyword">if</span>(<span class="cm-variable-2">to</span> <span class="cm-operator">==</span> <span class="cm-variable-2">from</span>){<span class="cm-keyword">return</span>(<span class="cm-variable-2">to</span>);}
+ 
+   <span class="cm-keyword">if</span>(<span class="cm-variable-2">weightedRange</span> <span class="cm-operator">&amp;&amp;</span> <span class="cm-variable">Math</span>.<span class="cm-property">random</span>()<span class="cm-operator">&lt;=</span><span class="cm-variable-2">weightStrength</span>){
+    <span class="cm-variable-2">ret</span> <span class="cm-operator">=</span> <span class="cm-variable">round</span>( <span class="cm-variable">Math</span>.<span class="cm-property">random</span>()<span class="cm-operator">*</span>(<span class="cm-variable-2">weightedRange</span>[<span class="cm-number">1</span>]<span class="cm-operator">-</span><span class="cm-variable-2">weightedRange</span>[<span class="cm-number">0</span>]) <span class="cm-operator">+</span> <span class="cm-variable-2">weightedRange</span>[<span class="cm-number">0</span>], <span class="cm-variable-2">decimalPlaces</span> )
+   }<span class="cm-keyword">else</span>{
+    <span class="cm-variable-2">ret</span> <span class="cm-operator">=</span> <span class="cm-variable">round</span>( <span class="cm-variable">Math</span>.<span class="cm-property">random</span>()<span class="cm-operator">*</span>(<span class="cm-variable-2">to</span><span class="cm-operator">-</span><span class="cm-variable-2">from</span>)<span class="cm-operator">+</span><span class="cm-variable-2">from</span>, <span class="cm-variable-2">decimalPlaces</span> )
+   }
+   <span class="cm-keyword">return</span>(<span class="cm-variable-2">ret</span>);
+}
+
+<span class="cm-comment">///////////////// RUN CODE //////////////////////////</span>
+<span class="cm-comment">//////////////////////////////////////////////////////</span>
+
+<span class="cm-keyword">var</span> <span class="cm-def">particles</span>
+(<span class="cm-keyword">function</span>(){
+  <span class="cm-variable">particles</span> <span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">ParticleEngine</span>(<span class="cm-string">'projector'</span>);
+  <span class="cm-variable">createjs</span>.<span class="cm-property">Ticker</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">"tick"</span>, <span class="cm-variable">updateCanvas</span>);
+  <span class="cm-variable">window</span>.<span class="cm-property">addEventListener</span>(<span class="cm-string">'resize'</span>, <span class="cm-variable">resizeCanvas</span>, <span class="cm-atom">false</span>);
+
+  <span class="cm-keyword">function</span> <span class="cm-def">updateCanvas</span>(){
+    <span class="cm-variable">particles</span>.<span class="cm-property">render</span>();
+  }
+
+  <span class="cm-keyword">function</span> <span class="cm-def">resizeCanvas</span>(){
+    <span class="cm-variable">particles</span>.<span class="cm-property">resize</span>();
+  }
+}());</code></pre>
+
+        </div>
+
+
+
+    <div id="result-box" class="code-box active zoom-1" role="region" aria-label="Result">
+
+
+  <iframe allow="accelerometer *; bluetooth *; camera *; clipboard-read *; clipboard-write *; display-capture *; encrypted-media *; geolocation *; gyroscope *; language-detector *; language-model *; microphone *; midi *; rewriter *; serial *; summarizer *; translator *; web-share *; writer *; xr-spatial-tracking *" allowfullscreen="true" allowpaymentrequest="true" allowtransparency="true" class="result-iframe  " frameborder="0" id="result-iframe" loading="lazy" name="CodePen Preview for Ambient Background" sandbox="allow-downloads allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation" scrolling="yes" title="CodePen Preview for Ambient Background" data-src="https://codepen.io/mimikos/fullembedgrid/wKqyqY?animations=run&amp;type=embed" src="./wKqyqY.html">
+  </iframe>
+
+
+</div>
+
+
+    <div id="about-box">
+
+  <div class="about-container">
+
+
+    <div class="about-user">
+
+        <a href="https://codepen.io/mimikos" target="_blank" rel="noopener"><img src="./default(2).png" loading="lazy" alt="" class="about-image"></a>
+
+      <div class="about-user-info">
+
+
+        <p>
+          This Pen is owned by <a href="https://codepen.io/mimikos" target="_blank" rel="noopener">Dimitra Vasilopoulou</a> on <a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a>.
+
+        </p>
+
+        <p>
+          <a href="https://codepen.io/mimikos" target="_blank" rel="noopener" class="about-user-more">
+          See more by @mimikos on CodePen
+          </a>
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+    <div id="resources-box" class="resources-box">
+
+  <h3>External CSS</h3>
+    <p>
+      This Pen doesn't use any external CSS resources.
+    </p>
+
+  <h3>External JavaScript</h3>
+    <ol class="list-of-resources">
+        <li>
+          <a href="https://code.createjs.com/easeljs-0.7.1.min.js" target="_blank">https://code.createjs.com/easeljs-0.7.1.min.js</a>
+        </li>
+        <li>
+          <a href="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js" target="_blank">//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js</a>
+        </li>
+    </ol>
+
+</div>
+
+
+  </div>
+
+    <footer class="embed-footer" id="embed-footer">
+
+    <button id="resources-link" class="resources-link action-button bottom left" href="#resources-box" aria-pressed="false" role="button">
+      Resources
+    </button>
+
+    <ul class="scaling-choices bottom right">
+  <li><button class="action-button" id="zoom-button-1">1×</button></li>
+  <li><button class="action-button" id="zoom-button-05">0.5×</button></li>
+  <li><button class="action-button" id="zoom-button-025">0.25×</button></li>
+</ul>
+
+<button id="rerun-button" class="action-button rerun-button bottom right">
+  Rerun
+</button>
+
+  </footer>
+
+
+
+  <script nonce="">
+    __processedPen = {"html":"&lt;canvas id=&quot;projector&quot;&gt;Your browser does not support the Canvas element.&lt;/canvas&gt;","css":"html, body{\n\twidth:100%; \n\theight:100%; \n\tpadding:0px; \n\tmargin:0px;\n\toverflow: hidden;\n\tbackground: #191d1e; /* Old browsers */\n\tbackground: -moz-linear-gradient(0deg,  #191d1e 50%, #283139 100%); /* FF3.6+ */\n\tbackground: -webkit-gradient(linear, left top, right bottom, color-stop(50%,#191d1e), color-stop(100%,#283139)); /* Chrome,Safari4+ */\n\tbackground: -webkit-linear-gradient(0deg,  #191d1e 50%,#283139 100%); /* Chrome10+,Safari5.1+ */\n\tbackground: -o-linear-gradient(0deg,  #191d1e 50%,#283139 100%); /* Opera 11.10+ */\n\tbackground: -ms-linear-gradient(0deg,  #191d1e 50%,#283139 100%); /* IE10+ */\n\tbackground: linear-gradient(0deg,  #191d1e 50%,#283139 100%); /* W3C */\n\tfilter: progid:DXImageTransform.Microsoft.gradient( startColorstr=&#39;#191d1e&#39;, endColorstr=&#39;#283139&#39;,GradientType=1 ); /* IE6-9 fallback on horizontal gradient */\n\tbackground-attachment: fixed\n}\n\n#projector {\n  position: absolute; \n  top: 0px;\n  left: 0px;\n  width:100%;\n  height:100%;\n} \n\n.center-div {\n\twidth:580px;\n    height:374px;\n    position:absolute;\n    left:50%;\n    top:50%;\n    margin-left: -290px;\n    margin-top:  -187px;\n}\n\n#preloaderDiv\n{\n\tposition:absolute;\n\tleft:50%;\n    top:50%;\n    margin-left: -27px;\n    margin-top:  -27px;\n}\n\n#logo{\n\topacity:0;\n    filter: alpha(opacity=0);\n}\n\n#date2014\n{\n\tposition:absolute;\n\tpadding-left: 210px;\n\tpadding-top:15px;\n\topacity:0;\n\ttop:303px;\n\tleft:0;\n    filter: alpha(opacity=0);\n}","js":"////////////////////////// PARTICLE ENGINE ////////////////////////////////////////\n/////////////////////////////////////////////////////////////////////////////////////////\n\nvar ParticleEngine = function () {\n  &#39;use strict&#39;;\n\n  function ParticleEngine(canvas_id) {\n    // enforces new\n    if (!(this instanceof ParticleEngine)) {\n      return new ParticleEngine(args);\n    }\n\n    var _ParticleEngine = this;\n\n    this.canvas_id = canvas_id;\n    this.stage = new createjs.Stage(canvas_id);\n    this.totalWidth = this.canvasWidth = document.getElementById(canvas_id).width = document.getElementById(canvas_id).offsetWidth;\n    this.totalHeight = this.canvasHeight = document.getElementById(canvas_id).height = document.getElementById(canvas_id).offsetHeight;\n    this.compositeStyle = &quot;lighter&quot;;\n\n    this.particleSettings = [{ id: &quot;small&quot;, num: 300, fromX: 0, toX: this.totalWidth, ballwidth: 3, alphamax: 0.4, areaHeight: .5, color: &quot;#0cdbf3&quot;, fill: false },\n    { id: &quot;medium&quot;, num: 100, fromX: 0, toX: this.totalWidth, ballwidth: 8, alphamax: 0.3, areaHeight: 1, color: &quot;#6fd2f3&quot;, fill: true },\n    { id: &quot;large&quot;, num: 10, fromX: 0, toX: this.totalWidth, ballwidth: 30, alphamax: 0.2, areaHeight: 1, color: &quot;#93e9f3&quot;, fill: true }];\n    this.particleArray = [];\n    this.lights = [{ ellipseWidth: 400, ellipseHeight: 100, alpha: 0.6, offsetX: 0, offsetY: 0, color: &quot;#6ac6e8&quot; },\n    { ellipseWidth: 350, ellipseHeight: 250, alpha: 0.3, offsetX: -50, offsetY: 0, color: &quot;#54d5e8&quot; },\n    { ellipseWidth: 100, ellipseHeight: 80, alpha: 0.2, offsetX: 80, offsetY: -50, color: &quot;#2ae8d8&quot; }];\n\n    this.stage.compositeOperation = _ParticleEngine.compositeStyle;\n\n\n    function drawBgLight()\n    {\n      var light;\n      var bounds;\n      var blurFilter;\n      for (var i = 0, len = _ParticleEngine.lights.length; i &lt; len; i++) {if (window.CP.shouldStopExecution(0)) break;\n        light = new createjs.Shape();\n        light.graphics.beginFill(_ParticleEngine.lights[i].color).drawEllipse(0, 0, _ParticleEngine.lights[i].ellipseWidth, _ParticleEngine.lights[i].ellipseHeight);\n        light.regX = _ParticleEngine.lights[i].ellipseWidth / 2;\n        light.regY = _ParticleEngine.lights[i].ellipseHeight / 2;\n        light.y = light.initY = _ParticleEngine.totalHeight / 2 + _ParticleEngine.lights[i].offsetY;\n        light.x = light.initX = _ParticleEngine.totalWidth / 2 + _ParticleEngine.lights[i].offsetX;\n\n        blurFilter = new createjs.BlurFilter(_ParticleEngine.lights[i].ellipseWidth, _ParticleEngine.lights[i].ellipseHeight, 1);\n        bounds = blurFilter.getBounds();\n        light.filters = [blurFilter];\n        light.cache(bounds.x - _ParticleEngine.lights[i].ellipseWidth / 2, bounds.y - _ParticleEngine.lights[i].ellipseHeight / 2, bounds.width * 2, bounds.height * 2);\n        light.alpha = _ParticleEngine.lights[i].alpha;\n\n        light.compositeOperation = &quot;screen&quot;;\n        _ParticleEngine.stage.addChildAt(light, 0);\n\n        _ParticleEngine.lights[i].elem = light;\n      }window.CP.exitedLoop(0);\n\n      TweenMax.fromTo(_ParticleEngine.lights[0].elem, 10, { scaleX: 1.5, x: _ParticleEngine.lights[0].elem.initX, y: _ParticleEngine.lights[0].elem.initY }, { yoyo: true, repeat: -1, ease: Power1.easeInOut, scaleX: 2, scaleY: 0.7 });\n      TweenMax.fromTo(_ParticleEngine.lights[1].elem, 12, { x: _ParticleEngine.lights[1].elem.initX, y: _ParticleEngine.lights[1].elem.initY }, { delay: 5, yoyo: true, repeat: -1, ease: Power1.easeInOut, scaleY: 2, scaleX: 2, y: _ParticleEngine.totalHeight / 2 - 50, x: _ParticleEngine.totalWidth / 2 + 100 });\n      TweenMax.fromTo(_ParticleEngine.lights[2].elem, 8, { x: _ParticleEngine.lights[2].elem.initX, y: _ParticleEngine.lights[2].elem.initY }, { delay: 2, yoyo: true, repeat: -1, ease: Power1.easeInOut, scaleY: 1.5, scaleX: 1.5, y: _ParticleEngine.totalHeight / 2, x: _ParticleEngine.totalWidth / 2 - 200 });\n    }\n\n    var blurFilter;\n    function drawParticles() {\n\n      for (var i = 0, len = _ParticleEngine.particleSettings.length; i &lt; len; i++) {if (window.CP.shouldStopExecution(1)) break;\n        var ball = _ParticleEngine.particleSettings[i];\n\n        var circle;\n        for (var s = 0; s &lt; ball.num; s++)\n        {if (window.CP.shouldStopExecution(2)) break;\n          circle = new createjs.Shape();\n          if (ball.fill) {\n            circle.graphics.beginFill(ball.color).drawCircle(0, 0, ball.ballwidth);\n            blurFilter = new createjs.BlurFilter(ball.ballwidth / 2, ball.ballwidth / 2, 1);\n            circle.filters = [blurFilter];\n            var bounds = blurFilter.getBounds();\n            circle.cache(-50 + bounds.x, -50 + bounds.y, 100 + bounds.width, 100 + bounds.height);\n          } else {\n            circle.graphics.beginStroke(ball.color).setStrokeStyle(1).drawCircle(0, 0, ball.ballwidth);\n          }\n\n          circle.alpha = range(0, 0.1);\n          circle.alphaMax = ball.alphamax;\n          circle.distance = ball.ballwidth * 2;\n          circle.ballwidth = ball.ballwidth;\n          circle.flag = ball.id;\n          _ParticleEngine.applySettings(circle, ball.fromX, ball.toX, ball.areaHeight);\n          circle.speed = range(2, 10);\n          circle.y = circle.initY;\n          circle.x = circle.initX;\n          circle.scaleX = circle.scaleY = range(0.3, 1);\n\n          _ParticleEngine.stage.addChild(circle);\n\n\n          animateBall(circle);\n\n          _ParticleEngine.particleArray.push(circle);\n        }window.CP.exitedLoop(2);\n      }window.CP.exitedLoop(1);\n    }\n\n    this.applySettings = function (circle, positionX, totalWidth, areaHeight)\n    {\n      circle.speed = range(1, 3);\n      circle.initY = weightedRange(0, _ParticleEngine.totalHeight, 1, [_ParticleEngine.totalHeight * (2 - areaHeight / 2) / 4, _ParticleEngine.totalHeight * (2 + areaHeight / 2) / 4], 0.8);\n      circle.initX = weightedRange(positionX, totalWidth, 1, [positionX + (totalWidth - positionX) / 4, positionX + (totalWidth - positionX) * 3 / 4], 0.6);\n    };\n\n    function animateBall(ball)\n    {\n      var scale = range(0.3, 1);\n      var xpos = range(ball.initX - ball.distance, ball.initX + ball.distance);\n      var ypos = range(ball.initY - ball.distance, ball.initY + ball.distance);\n      var speed = ball.speed;\n      TweenMax.to(ball, speed, { scaleX: scale, scaleY: scale, x: xpos, y: ypos, onComplete: animateBall, onCompleteParams: [ball], ease: Cubic.easeInOut });\n      TweenMax.to(ball, speed / 2, { alpha: range(0.1, ball.alphaMax), onComplete: fadeout, onCompleteParams: [ball, speed] });\n    }\n\n    function fadeout(ball, speed)\n    {\n      ball.speed = range(2, 10);\n      TweenMax.to(ball, speed / 2, { alpha: 0 });\n    }\n\n    drawBgLight();\n    drawParticles();\n  }\n\n  ParticleEngine.prototype.render = function ()\n  {\n    this.stage.update();\n  };\n\n  ParticleEngine.prototype.resize = function ()\n  {\n    this.totalWidth = this.canvasWidth = document.getElementById(this.canvas_id).width = document.getElementById(this.canvas_id).offsetWidth;\n    this.totalHeight = this.canvasHeight = document.getElementById(this.canvas_id).height = document.getElementById(this.canvas_id).offsetHeight;\n    this.render();\n\n    for (var i = 0, length = this.particleArray.length; i &lt; length; i++)\n    {if (window.CP.shouldStopExecution(3)) break;\n      this.applySettings(this.particleArray[i], 0, this.totalWidth, this.particleArray[i].areaHeight);\n    }window.CP.exitedLoop(3);\n\n    for (var j = 0, len = this.lights.length; j &lt; len; j++) {if (window.CP.shouldStopExecution(4)) break;\n      this.lights[j].elem.initY = this.totalHeight / 2 + this.lights[j].offsetY;\n      this.lights[j].elem.initX = this.totalWidth / 2 + this.lights[j].offsetX;\n      TweenMax.to(this.lights[j].elem, .5, { x: this.lights[j].elem.initX, y: this.lights[j].elem.initY });\n    }window.CP.exitedLoop(4);\n  };\n\n  return ParticleEngine;\n\n}();\n\n\n////////////////////////UTILS//////////////////////////////////////\n//////////////////////////////////////////////////////////////////\n\nfunction range(min, max)\n{\n  return min + (max - min) * Math.random();\n}\n\nfunction round(num, precision)\n{\n  var decimal = Math.pow(10, precision);\n  return Math.round(decimal * num) / decimal;\n}\n\nfunction weightedRange(to, from, decimalPlaces, weightedRange, weightStrength)\n{\n  if (typeof from === &quot;undefined&quot; || from === null) {\n    from = 0;\n  }\n  if (typeof decimalPlaces === &quot;undefined&quot; || decimalPlaces === null) {\n    decimalPlaces = 0;\n  }\n  if (typeof weightedRange === &quot;undefined&quot; || weightedRange === null) {\n    weightedRange = 0;\n  }\n  if (typeof weightStrength === &quot;undefined&quot; || weightStrength === null) {\n    weightStrength = 0;\n  }\n\n  var ret;\n  if (to == from) {return to;}\n\n  if (weightedRange &amp;&amp; Math.random() &lt;= weightStrength) {\n    ret = round(Math.random() * (weightedRange[1] - weightedRange[0]) + weightedRange[0], decimalPlaces);\n  } else {\n    ret = round(Math.random() * (to - from) + from, decimalPlaces);\n  }\n  return ret;\n}\n\n///////////////// RUN CODE //////////////////////////\n//////////////////////////////////////////////////////\n\nvar particles;\n(function () {\n  particles = new ParticleEngine(&#39;projector&#39;);\n  createjs.Ticker.addEventListener(&quot;tick&quot;, updateCanvas);\n  window.addEventListener(&#39;resize&#39;, resizeCanvas, false);\n\n  function updateCanvas() {\n    particles.render();\n  }\n\n  function resizeCanvas() {\n    particles.resize();\n  }\n})();"};
+    __preprocessors = {
+      "html": "none",
+      "css": "none",
+      "js": "none"
+    };
+    __preprocessorNames = {
+      "html": "HTML",
+      "css": "CSS",
+      "js": "JS"
+    };
+    __editable = false;
+    __embed_prefill = false;
+  </script>
+
+  <script src="./embed-d492f8b0f63f0a8ba679c9cd0a2fffbaa24504a7928435ba1bfc1859f904e02b.js.download"></script>
+
+
+<script nonce="">(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.nonce='YZDAvxGEjMI=';d.innerHTML="window.__CF$cv$params={r:'9710cc20d85ce294',t:'MTc1NTUxMzY3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='YZDAvxGEjMI=';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;" src="./saved_resource(2).html"></iframe>
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>

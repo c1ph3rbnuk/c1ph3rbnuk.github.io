@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://cdpn.io/YusukeNakaya/fullembedgrid/XyOaBj?animations=run&type=embed -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  
+
+  <title>Only CSS: Shooting Star</title>
+
+    <link rel="canonical" href="https://codepen.io/YusukeNakaya/pen/XyOaBj">
+  
+  <link rel="stylesheet" href="./normalize-5.0.0.min.css">
+
+  <link rel="stylesheet" href="./css">
+  
+<style>
+body {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  font-family: "Anton", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.night {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(45deg);
+}
+
+.shooting_star {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(-45deg, #5f91ff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  -webkit-animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+          animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+}
+.shooting_star::before {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+          animation: shining 3000ms ease-in-out infinite;
+}
+.shooting_star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #5f91ff, rgba(0, 0, 255, 0));
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  -webkit-animation: shining 3000ms ease-in-out infinite;
+          animation: shining 3000ms ease-in-out infinite;
+  transform: translateX(50%) rotateZ(-45deg);
+}
+.shooting_star:nth-child(1) {
+  top: calc(50% - 47px);
+  left: calc(50% - 253px);
+  -webkit-animation-delay: 329ms;
+          animation-delay: 329ms;
+}
+.shooting_star:nth-child(1)::before, .shooting_star:nth-child(1)::after {
+  -webkit-animation-delay: 329ms;
+          animation-delay: 329ms;
+}
+.shooting_star:nth-child(2) {
+  top: calc(50% - 24px);
+  left: calc(50% - 189px);
+  -webkit-animation-delay: 9349ms;
+          animation-delay: 9349ms;
+}
+.shooting_star:nth-child(2)::before, .shooting_star:nth-child(2)::after {
+  -webkit-animation-delay: 9349ms;
+          animation-delay: 9349ms;
+}
+.shooting_star:nth-child(3) {
+  top: calc(50% - 170px);
+  left: calc(50% - 171px);
+  -webkit-animation-delay: 5825ms;
+          animation-delay: 5825ms;
+}
+.shooting_star:nth-child(3)::before, .shooting_star:nth-child(3)::after {
+  -webkit-animation-delay: 5825ms;
+          animation-delay: 5825ms;
+}
+.shooting_star:nth-child(4) {
+  top: calc(50% - 197px);
+  left: calc(50% - 262px);
+  -webkit-animation-delay: 4343ms;
+          animation-delay: 4343ms;
+}
+.shooting_star:nth-child(4)::before, .shooting_star:nth-child(4)::after {
+  -webkit-animation-delay: 4343ms;
+          animation-delay: 4343ms;
+}
+.shooting_star:nth-child(5) {
+  top: calc(50% - -12px);
+  left: calc(50% - 174px);
+  -webkit-animation-delay: 3765ms;
+          animation-delay: 3765ms;
+}
+.shooting_star:nth-child(5)::before, .shooting_star:nth-child(5)::after {
+  -webkit-animation-delay: 3765ms;
+          animation-delay: 3765ms;
+}
+.shooting_star:nth-child(6) {
+  top: calc(50% - 147px);
+  left: calc(50% - 58px);
+  -webkit-animation-delay: 2180ms;
+          animation-delay: 2180ms;
+}
+.shooting_star:nth-child(6)::before, .shooting_star:nth-child(6)::after {
+  -webkit-animation-delay: 2180ms;
+          animation-delay: 2180ms;
+}
+.shooting_star:nth-child(7) {
+  top: calc(50% - -147px);
+  left: calc(50% - 166px);
+  -webkit-animation-delay: 7367ms;
+          animation-delay: 7367ms;
+}
+.shooting_star:nth-child(7)::before, .shooting_star:nth-child(7)::after {
+  -webkit-animation-delay: 7367ms;
+          animation-delay: 7367ms;
+}
+.shooting_star:nth-child(8) {
+  top: calc(50% - -37px);
+  left: calc(50% - 13px);
+  -webkit-animation-delay: 4739ms;
+          animation-delay: 4739ms;
+}
+.shooting_star:nth-child(8)::before, .shooting_star:nth-child(8)::after {
+  -webkit-animation-delay: 4739ms;
+          animation-delay: 4739ms;
+}
+.shooting_star:nth-child(9) {
+  top: calc(50% - 139px);
+  left: calc(50% - 133px);
+  -webkit-animation-delay: 6595ms;
+          animation-delay: 6595ms;
+}
+.shooting_star:nth-child(9)::before, .shooting_star:nth-child(9)::after {
+  -webkit-animation-delay: 6595ms;
+          animation-delay: 6595ms;
+}
+.shooting_star:nth-child(10) {
+  top: calc(50% - 101px);
+  left: calc(50% - 93px);
+  -webkit-animation-delay: 9297ms;
+          animation-delay: 9297ms;
+}
+.shooting_star:nth-child(10)::before, .shooting_star:nth-child(10)::after {
+  -webkit-animation-delay: 9297ms;
+          animation-delay: 9297ms;
+}
+.shooting_star:nth-child(11) {
+  top: calc(50% - 197px);
+  left: calc(50% - 71px);
+  -webkit-animation-delay: 8792ms;
+          animation-delay: 8792ms;
+}
+.shooting_star:nth-child(11)::before, .shooting_star:nth-child(11)::after {
+  -webkit-animation-delay: 8792ms;
+          animation-delay: 8792ms;
+}
+.shooting_star:nth-child(12) {
+  top: calc(50% - -10px);
+  left: calc(50% - 196px);
+  -webkit-animation-delay: 5176ms;
+          animation-delay: 5176ms;
+}
+.shooting_star:nth-child(12)::before, .shooting_star:nth-child(12)::after {
+  -webkit-animation-delay: 5176ms;
+          animation-delay: 5176ms;
+}
+.shooting_star:nth-child(13) {
+  top: calc(50% - 108px);
+  left: calc(50% - 152px);
+  -webkit-animation-delay: 3121ms;
+          animation-delay: 3121ms;
+}
+.shooting_star:nth-child(13)::before, .shooting_star:nth-child(13)::after {
+  -webkit-animation-delay: 3121ms;
+          animation-delay: 3121ms;
+}
+.shooting_star:nth-child(14) {
+  top: calc(50% - -160px);
+  left: calc(50% - 202px);
+  -webkit-animation-delay: 1640ms;
+          animation-delay: 1640ms;
+}
+.shooting_star:nth-child(14)::before, .shooting_star:nth-child(14)::after {
+  -webkit-animation-delay: 1640ms;
+          animation-delay: 1640ms;
+}
+.shooting_star:nth-child(15) {
+  top: calc(50% - 88px);
+  left: calc(50% - 145px);
+  -webkit-animation-delay: 9095ms;
+          animation-delay: 9095ms;
+}
+.shooting_star:nth-child(15)::before, .shooting_star:nth-child(15)::after {
+  -webkit-animation-delay: 9095ms;
+          animation-delay: 9095ms;
+}
+.shooting_star:nth-child(16) {
+  top: calc(50% - -119px);
+  left: calc(50% - 147px);
+  -webkit-animation-delay: 1197ms;
+          animation-delay: 1197ms;
+}
+.shooting_star:nth-child(16)::before, .shooting_star:nth-child(16)::after {
+  -webkit-animation-delay: 1197ms;
+          animation-delay: 1197ms;
+}
+.shooting_star:nth-child(17) {
+  top: calc(50% - 59px);
+  left: calc(50% - 123px);
+  -webkit-animation-delay: 3712ms;
+          animation-delay: 3712ms;
+}
+.shooting_star:nth-child(17)::before, .shooting_star:nth-child(17)::after {
+  -webkit-animation-delay: 3712ms;
+          animation-delay: 3712ms;
+}
+.shooting_star:nth-child(18) {
+  top: calc(50% - -5px);
+  left: calc(50% - 109px);
+  -webkit-animation-delay: 8532ms;
+          animation-delay: 8532ms;
+}
+.shooting_star:nth-child(18)::before, .shooting_star:nth-child(18)::after {
+  -webkit-animation-delay: 8532ms;
+          animation-delay: 8532ms;
+}
+.shooting_star:nth-child(19) {
+  top: calc(50% - 180px);
+  left: calc(50% - 112px);
+  -webkit-animation-delay: 9366ms;
+          animation-delay: 9366ms;
+}
+.shooting_star:nth-child(19)::before, .shooting_star:nth-child(19)::after {
+  -webkit-animation-delay: 9366ms;
+          animation-delay: 9366ms;
+}
+.shooting_star:nth-child(20) {
+  top: calc(50% - -55px);
+  left: calc(50% - 77px);
+  -webkit-animation-delay: 7291ms;
+          animation-delay: 7291ms;
+}
+.shooting_star:nth-child(20)::before, .shooting_star:nth-child(20)::after {
+  -webkit-animation-delay: 7291ms;
+          animation-delay: 7291ms;
+}
+
+@-webkit-keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+@-webkit-keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+@-webkit-keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+@keyframes sky {
+  0% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+</style>
+
+  
+  
+  
+</head>
+
+<body translate="no" data-new-gr-c-s-check-loaded="14.1248.0" data-gr-ext-installed="">
+  <div class="night">
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+  <div class="shooting_star"></div>
+</div>
+  
+  
+  
+  <script src="./iframeRefreshCSS-44fe83e49b63affec96918c9af88c0d80b209a862cf87ac46bc933074b8c557d.js.download"></script>
+
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
