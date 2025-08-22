@@ -18,18 +18,12 @@ Hi there! My name is Peter Kinyumu. I am a Security Analyst experienced in Penet
 - Provided ICT support and troubleshooting for end-users (hardware, software, networks).  
 - Assisted with ICT asset management (deployment, ownership change, surrender).  
 - Monitored service desk lines & emails, ensuring prompt resolution of incidents.  
-- Logged and categorized incidents using **Maximo ITSM tool**.  
+- Logged and categorized incidents using Maximo ITSM tool.  
 {{< /timelineItem >}}
 
 {{< timelineItem icon="briefcase" header="Technical Intern" badge="Oct 2024 – Dec 2024" subheader="Airtel Kenya, Nairobi" >}}
 - Conducted feasibility surveys for client internet installations (fiber & microwave).  
-- Collaborated with **Nokia** on network upgrades, downgrades, and installations.  
-{{< /timelineItem >}}
-
-{{< timelineItem icon="briefcase" header="ICT Attachee" badge="May 2023 – Jul 2023" subheader="Kenya Rural Roads Authority (KeRRA), Mombasa" >}}
-- Assisted in tech support & system troubleshooting.  
-- Upgraded, installed, and configured hardware & software systems.  
-- Installed and maintained network infrastructure.  
+- Collaborated with Nokia on network upgrades, downgrades, and installations.  
 {{< /timelineItem >}}
 
 {{< /timeline >}}
@@ -49,6 +43,9 @@ Graduated as the best male security analyst in my cohort🥇 .
 {{< /timelineItem >}}
 
 {{< timelineItem icon="graduation-cap" header="Blue Team Training" badge="Aug 2023" subheader="Cybertalents - Egypt" >}}
+Trained in Security Operations Center (SOC) processes: log analysis, alert triage, and incident response.
+Learned practical threat hunting techniques using Windows and Linux environments.
+Developed skills in analyzing attacker behaviors, identifying persistence techniques, and detecting anomalies in Wazuh EDR and Splunk SIEM tool.
 {{< /timelineItem >}}
 
 {{< timelineItem icon="graduation-cap" header="Cyber Threat Hunting" badge="Oct 2022" subheader="Active Countermeasures " >}}
@@ -56,6 +53,8 @@ Attended a 6hr Cyber Threat Hunting level 1 course by Chris Brenton on October 4
 {{< /timelineItem >}}
 
 {{< timelineItem icon="graduation-cap" header="Ethical Hacking Training" badge="Aug 2021" subheader="Cybertalents - Egypt" >}}
+Trained on Network Penetration Testing including reconnaissance, scanning, enumeration, and exploitation techniques.
+Learned Web Application Security testing, covering OWASP Top 10 vulnerabilities such as SQL Injection, XSS, CSRF, and authentication/authorization flaws.
 {{< /timelineItem >}}
 {{< /timeline >}}
 
