@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 Peter Kinyumu</copyright>
-    <lastBuildDate>Sat, 23 Sep 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>UDOM End of year CTF</title>
@@ -27,6 +27,16 @@
       <guid>http://localhost:1313/writeups/shehacks/</guid>
       <description></description>
       <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/shehacks/feature.jpeg" />
+    </item>
+    
+    <item>
+      <title>Chasing Flags CTF Round 4</title>
+      <link>http://localhost:1313/writeups/chasing/</link>
+      <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/writeups/chasing/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/writeups/chasing/feature.png" />
     </item>
     
   </channel>

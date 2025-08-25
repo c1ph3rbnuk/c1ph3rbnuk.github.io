@@ -3,7 +3,7 @@ title: "Cryptography 101"
 weight: 4
 draft: false
 description: "Basics of cryptography"
-date: "2023-08-15"
+date: "2024-08-15"
 tags: ["cryptography", "ceasar", "cipher"]
 ---
 

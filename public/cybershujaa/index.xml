@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cybershujaas on Deathstalker</title>
+    <link>http://localhost:1313/cybershujaa/</link>
+    <description>Recent content in Cybershujaas on Deathstalker</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>© 2025 Peter Kinyumu</copyright>
+    <lastBuildDate>Fri, 28 Jun 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/cybershujaa/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>IpV6 Attacks Overview</title>
+      <link>http://localhost:1313/cybershujaa/ipv6_attacks/</link>
+      <pubDate>Fri, 28 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/ipv6_attacks/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Initial Attack Vectors</title>
+      <link>http://localhost:1313/cybershujaa/initial_attack_vectors/</link>
+      <pubDate>Thu, 13 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/initial_attack_vectors/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Active Directory Lab Setup</title>
+      <link>http://localhost:1313/cybershujaa/adlab/</link>
+      <pubDate>Wed, 12 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/adlab/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Active Directory Overview</title>
+      <link>http://localhost:1313/cybershujaa/adservice/</link>
+      <pubDate>Tue, 11 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/adservice/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Access Control Security</title>
+      <link>http://localhost:1313/cybershujaa/acs/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/acs/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Threat Intelligence 101</title>
+      <link>http://localhost:1313/cybershujaa/thret_intel101/</link>
+      <pubDate>Mon, 10 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/thret_intel101/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SMB</title>
+      <link>http://localhost:1313/cybershujaa/smbenum/</link>
+      <pubDate>Sun, 02 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/smbenum/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Linux Fundamentals.</title>
+      <link>http://localhost:1313/cybershujaa/linux101/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/linux101/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>MITRE Framework 101.</title>
+      <link>http://localhost:1313/cybershujaa/mitre101/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/mitre101/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Windows Fundamentals.</title>
+      <link>http://localhost:1313/cybershujaa/windows101/</link>
+      <pubDate>Sat, 01 Jun 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/windows101/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cybershujaa/activerecon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/activerecon/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cybershujaa/nmap101/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/nmap101/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cybershujaa/passiverecon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/passiverecon/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://localhost:1313/cybershujaa/vulnerability_assessment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/cybershujaa/vulnerability_assessment/</guid>
+      <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>
